@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - Restaurante</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      max-width: 1000px;
+      padding: 20px;
+    }
+    .product-row {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .card {
+      width: 30%;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      background-color: #f0f0f0; /* Añadir un fondo para las imágenes si tienen espacio vacío */
+    }
+    .card-content {
+      padding: 10px;
+    }
+    .card-content h3 {
+      margin-bottom: 5px;
+      font-size: 1em;
+      color: #333;
+    }
+    .card-content p {
+      font-size: 0.9em;
+      color: #777;
+      margin-bottom: 5px;
+    }
+    .card-content .price {
+      font-size: 1em;
+      font-weight: bold;
+      color: #e67e22;
+      margin-bottom: 5px;
+    }
+    .card-content .domicilio {
+      color: #27ae60;
+      font-weight: bold;
+    }
+    .history-card {
+      width: 100%;
+      background-color: #f39c12;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .history-card h2 {
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+    .history-card p {
+      font-size: 1em;
+      color: #fefefe;
+    }
+    @media (max-width: 768px) {
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Productos -->
+    <div class="product-row">
+      <!-- Chuzo de Pollo -->
+      <div class="card">
+        <img src="img/CHUZOS DE POLLO FINAL.jpeg" alt="Chuzo de Pollo">
+        <div class="card-content">
+          <h3>CHUZOS DE POLLO</h3>
+          <p>AREPA CON QUESO MOZARELLA, ENSALADA DULCE, TOCINETA, MAICITOS, PAPAS A LA FRANCESA Y GASEOSA</p>
+          <div class="price">$18,000</div>
+          <div class="domicilio">¡Domicilio Gratis!</div>
+        </div>
+      </div>
+
+      <!-- Chuzo de Cerdo -->
+      <div class="card">
+        <img src="img/CHUZO DE CERDO 3.jpeg" alt="Chuzo de Cerdo">
+        <div class="card-content">
+          <h3>CHUZOS DE CERDO</h3>
+          <p>AREPA CON QUESO MOZARELLA, ENSALADA DULCE, TOCINETA, MAICITOS, PAPAS A LA FRANCESA Y GASEOSA</p>
+          <div class="price">$18,000</div>
+          <div class="domicilio">¡Domicilio Gratis!</div>
+        </div>
+      </div>
+
+      <!-- Patacón de Carne Desmechada -->
+      <div class="card">
+        <img src="img/patacon final.png" alt="Patacón de Carne Desmechada">
+        <div class="card-content">
+          <h3>PATACÓN DE CARNE DESMECHADA</h3>
+          <p>GUACAMOLE, HOGAO, QUESO MOZARELLA Y GASEOSA</p>
+          <div class="price">$15,000</div>
+          <div class="domicilio">¡Domicilio Gratis!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nuestra Historia -->
+    <div class="history-card">
+      <h2>Nuestra Historia</h2>
+      <p>
+        Somos un emprendimiento fundamentado con la ayuda de Dios vivo, que trabajamos con amor y dedicación para complacer a nuestros comensales, deseándoles una bendición mientras nosotros les servimos y ellos descansan.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
