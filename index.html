@@ -1,43 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Catálogo - La Cocina de Claudia</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - Restaurante</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <h1>La Cocina de Claudia</h1>
-        <p>Deliciosos tamales y morcillas caseras</p>
-    </header>
+  <header class="header">
+    <h1>Platos de Claudia</h1>
+    <p>¡Disfruta nuestros deliciosos platillos con entrega a domicilio gratis!</p>
+  </header>
 
-    <section id="catalogo">
-        <h2>Nuestros Productos</h2>
-        <div class="productos">
-            <!-- Aquí van los productos -->
-            <div class="producto">
-                <img src="img/tamal1.jpg" alt="Tamal">
-                <h3>Tamal Tradicional</h3>
-                <p>Descripción del producto.</p>
-                <p><strong>Precio:</strong> $12.00</p>
-            </div>
-            <!-- Repite para otros productos -->
-        </div>
-    </section>
+  <div class="container">
+    <!-- Productos -->
+    <div class="product-row">
+      <!-- Chuzo de Pollo -->
+      <div class="product-card">
+        <img class="product-image" src="img/CHUZO DE POLLO 2.jpeg" alt="Chuzo de Pollo">
+        <h3>CHUZOS DE POLLO</h3>
+        <p>AREPA CON QUESO MOZARELLA, ENSALADA DULCE, TOCINETA, MAICITOS, PAPAS A LA FRANCESA Y GASEOSA</p>
+        <span class="price">$18,000</span>
+        <a href="https://wa.me/3158151695?text=Quiero%20un%20CHUZO%20DE%20POLLO" class="order-btn">Quiero Este</a>
+      </div>
 
-    <section id="informacion">
-        <h2>¿Quiénes Somos?</h2>
-        <p>Somos un restaurante familiar especializado en tamales y morcillas tradicionales. Nuestros productos son hechos con ingredientes frescos y con el sabor casero de siempre.</p>
-    </section>
+      <!-- Chuzo de Cerdo -->
+      <div class="product-card">
+        <img class="product-image" src="img/CHUZO DE CERDO 3.jpeg" alt="Chuzo de Cerdo">
+        <h3>CHUZOS DE CERDO</h3>
+        <p>AREPA CON QUESO MOZARELLA, ENSALADA DULCE, TOCINETA, MAICITOS, PAPAS A LA FRANCESA Y GASEOSA</p>
+        <span class="price">$18,000</span>
+        <a href="https://wa.me/3158151695?text=Quiero%20un%20CHUZO%20DE%20CERDO" class="order-btn">Quiero Este</a>
+      </div>
 
-    <footer>
-        <p>Contáctanos:</p>
-        <a href="https://wa.me/1234567890" target="_blank">WhatsApp</a> | 
-        <a href="https://t.me/usuario" target="_blank">Telegram</a>
-    </footer>
+      <!-- Patacón de Carne Desmechada -->
+      <div class="product-card">
+        <img class="product-image" src="img/patacon final.png" alt="Patacón de Carne Desmechada">
+        <h3>PATACÓN DE CARNE DESMECHADA</h3>
+        <p>GUACAMOLE, HOGAO, QUESO MOZARELLA Y GASEOSA</p>
+        <span class="price">$15,000</span>
+        <a href="https://wa.me/3158151695?text=Quiero%20un%20PATACÓN%20DE%20CARNE%20DESMECHADA" class="order-btn">Quiero Este</a>
+      </div>
+    </div>
 
-    <script src="app.js"></script>
+    <!-- Nuestra Historia -->
+    <div class="history-card">
+      <h2>Nuestra Historia</h2>
+      <p>
+        En <strong>Platos de Claudia</strong>, nos dedicamos a crear experiencias culinarias excepcionales, combinando ingredientes frescos y de alta calidad con un servicio comprometido. Nuestro equipo trabaja con pasión para ofrecer platos que deleitan el paladar de nuestros clientes, garantizando satisfacción en cada entrega. Nuestro objetivo es brindarte una experiencia memorable desde la comodidad de tu hogar.
+      </p>
+    </div>
+
+    <!-- Contacto -->
+    <div class="contact-card" id="contact">
+      <h2>Contáctanos</h2>
+      <p>Realiza tu pedido a través de WhatsApp o Telegram:</p>
+      <p><a href="https://wa.me/3158151695" target="_blank">315 815 1695</a></p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2024 Platos de Claudia - Todos los derechos reservados</p>
+  </footer>
 </body>
 </html>
