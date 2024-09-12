@@ -81,16 +81,16 @@ orderForm.addEventListener('submit', function(e) {
   
   // Crear el mensaje para WhatsApp
   const sauces = formData.getAll('sauces');
-  const message = `Pedido de ${orderDetails.name}%0A
-- Producto: ${selectedProduct.name}%0A
-- Bebida: ${orderDetails.beverage}%0A
-- Salsas: ${sauces.length > 0 ? sauces.join(', ') : 'No salsas'}%0A
-- Salsas en el pedido: ${orderDetails.addSauce ? 'Sí' : 'No'}%0A
-- Pago: ${orderDetails.payment}%0A
-- Torre: ${orderDetails.tower}%0A
-- Apartamento: ${orderDetails.apartment}%0A
-- Cantidad: ${orderDetails.quantity}%0A
-- Propina: ${orderDetails.tip || 'No propina'}%0A
+  const message = `Pedido de ${orderDetails.name}
+- Producto: ${selectedProduct.name}
+- Bebida: ${orderDetails.beverage}
+- Salsas: ${sauces.length > 0 ? sauces.join(', ') : 'No salsas'}
+- Salsas en el pedido: ${orderDetails.addSauce ? 'Sí' : 'No'}
+- Pago: ${orderDetails.payment}
+- Torre: ${orderDetails.tower}
+- Apartamento: ${orderDetails.apartment}
+- Cantidad: ${orderDetails.quantity}
+- Propina: ${orderDetails.tip || 'No propina'}
 - Total: $${(selectedProduct.price * orderDetails.quantity).toLocaleString()}`;
 
   // URL de WhatsApp con el mensaje
