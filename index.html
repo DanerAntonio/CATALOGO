@@ -3,110 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo - Restaurante</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
+  <title>La Cocina de Claudia</title>
+ <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="header">
+    <img src="/img/logo la cocina de claudia .jpg" alt="Logo de La Cocina de Claudia">
     <h1>Platos de Claudia</h1>
     <p>¡Disfruta nuestros deliciosos platillos con entrega a domicilio gratis!</p>
   </header>
 
   <div class="container">
-    <!-- Productos -->
-    <div class="product-row">
-      <!-- Chuzo de Pollo -->
-      <div class="product-card">
-        <img class="product-image" src="img/CHUZO DE POLLO 2.jpeg" alt="Chuzo de Pollo">
-        <h3>CHUZOS DE POLLO</h3>
-        <p>AREPA CON QUESO MOZARELLA, ENSALADA DULCE, TOCINETA, MAICITOS, PAPAS A LA FRANCESA Y GASEOSA</p>
-        <span class="price">$18,000</span>
-        <a href="https://wa.me/3112762618?text=Quiero%20un%20CHUZO%20DE%20POLLO" class="order-btn">Quiero Este</a>
-      </div>
-
-      <!-- Chuzo de Cerdo -->
-      <div class="product-card">
-        <img class="product-image" src="img/CHUZO DE CERDO 3.jpeg" alt="Chuzo de Cerdo">
-        <h3>CHUZOS DE CERDO</h3>
-        <p>AREPA CON QUESO MOZARELLA, ENSALADA DULCE, TOCINETA, MAICITOS, PAPAS A LA FRANCESA Y GASEOSA</p>
-        <span class="price">$18,000</span>
-        <a href="https://wa.me/3112762618?text=Quiero%20un%20CHUZO%20DE%20CERDO" class="order-btn">Quiero Este</a>
-      </div>
-
-      <!-- Patacón de Carne Desmechada -->
-      <div class="product-card">
-        <img class="product-image" src="img/patacon final.png" alt="Patacón de Carne Desmechada">
-        <h3>PATACÓN DE CARNE DESMECHADA</h3>
-        <p>GUACAMOLE, HOGAO, QUESO MOZARELLA Y GASEOSA</p>
-        <span class="price">$15,000</span>
-        <a href="https://wa.me/3112762618?text=Quiero%20un%20PATACÓN%20DE%20CARNE%20DESMECHADA" class="order-btn">Quiero Este</a>
-      </div>
-
-      <!-- Tamales de Masa o Arroz -->
-      <div class="product-card">
-        <img class="product-image" src="img/tamal-guatemalteco.webp" alt="Tamales de Masa o Arroz">
-        <h3>TAMALES DE MASA O ARROZ</h3>
-        <p>3 CARNES: CHICHARRÓN, CARNUDO, CERDO, COSTILLA DE CERDO MÁS GASEOSA</p>
-        <span class="price">$20,000</span>
-        <a href="https://wa.me/3112762618?text=Quiero%20un%20TAMAL%20DE%20MASA%20O%20ARROZ" class="order-btn">Quiero Este</a>
-      </div>
-
-      <!-- Arroz Paisa -->
-      <div class="product-card">
-        <img class="product-image" src="img/arroz paiza1.jpg" alt="Arroz Paisa">
-        <h3>ARROZ PAISA</h3>
-        <p>PORCIÓN PARA DOS PERSONAS: COSTILLA BBQ, PAPAS A LA FRANCESA MÁS GASEOSA</p>
-        <span class="price">$20,000</span>
-        <a href="https://wa.me/3112762618?text=Quiero%20un%20ARROZ%20PAISA" class="order-btn">Quiero Este</a>
-      </div>
-
-      <!-- Fiambres -->
-      <div class="product-card">
-        <img class="product-image" src="img/Imagen de WhatsApp 2024-07-20 a las 12.50.23_ca91349f.jpg" alt="Fiambres">
-        <h3>FIAMBRES</h3>
-        <p>CHICHARRÓN, CARNE MOLIDA, HUEVO COCIDO, PURÉ DE PAPA MÁS GASEOSA</p>
-        <span class="price">$20,000</span>
-        <a href="https://wa.me/3112762618?text=Quiero%20un%20FIAMBRE" class="order-btn">Quiero Este</a>
-      </div>
-
-      <!-- Arroz Chino -->
-      <div class="product-card">
-        <img class="product-image" src="img/arroz paiza1.jpg" alt="Arroz Chino">
-        <h3>ARROZ CHINO</h3>
-        <p>PORCIÓN PARA DOS PERSONAS: PERNIL FRITO, SHOP SUEY, PAPAS A LA FRANCESA, CROASÁN MINI MÁS GASEOSA</p>
-        <span class="price">$20,000</span>
-        <a href="https://wa.me/3112762618?text=Quiero%20un%20ARROZ%20CHINO" class="order-btn">Quiero Este</a>
-      </div>
-
-      <!-- Variedades de Morcilla -->
-      <div class="product-card">
-        <img class="product-image" src="img/MORCILLA.jpeg" alt="Variedades de Morcilla">
-        <h3>VARIEDADES DE MORCILLA ANTIOQUEÑA</h3>
-        <p>MORCILLA BLANCA, MORCILLA CON VERDURAS, MORCILLA CON ARROZ, PAPA Y CHICHARRÓN MÁS GASEOSA</p>
-        <span class="price">$12,000 / libra</span>
-        <a href="https://wa.me/3112762618?text=Quiero%20una%20VARIEDAD%20DE%20MORCILLA" class="order-btn">Quiero Este</a>
-      </div>
+    <div class="product-row" id="productContainer">
+      <!-- Los productos se generarán dinámicamente con JavaScript -->
     </div>
+  </div>
 
-    <!-- Nuestra Historia -->
-    <div class="history-card">
-      <h2>Nuestra Historia</h2>
-      <p>
-        En <strong>Platos de Claudia</strong>, nos dedicamos a crear experiencias culinarias excepcionales, combinando ingredientes frescos y de alta calidad con un servicio comprometido. Nuestro equipo trabaja con pasión para ofrecer platos que deleitan el paladar de nuestros clientes, garantizando satisfacción en cada entrega. Nuestro objetivo es brindarte una experiencia memorable desde la comodidad de tu hogar.
-      </p>
-    </div>
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Personaliza tu pedido</h2>
+      <form id="orderForm">
+        <div class="form-group">
+          <label for="beverage">Selecciona tu bebida:</label>
+          <select id="beverage" name="beverage" required>
+            <option value="">Seleccione una opción</option>
+            <option value="gaseosa">Gaseosa</option>
+            <option value="agua">Agua</option>
+            <option value="jugo">Jugo</option>
+          </select>
+        </div>
 
-    <!-- Contacto -->
-    <div class="contact-card" id="contact">
-      <h2>Contáctanos</h2>
-      <p>Realiza tu pedido a través de WhatsApp o Telegram:</p>
-      <p><a href="https://wa.me/3112762618" target="_blank">311 276 2618</a></p>
+        <div class="form-group">
+          <label>Selecciona las salsas:</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="sauces" value="mayonesa"> Mayonesa</label>
+            <label><input type="checkbox" name="sauces" value="salsa rosada"> Salsa Rosada</label>
+            <label><input type="checkbox" name="sauces" value="ají"> Ají</label>
+            <label><input type="checkbox" name="sauces" value="bbq"> BBQ</label>
+            <label><input type="checkbox" name="sauces" value="pina roja"> Salsa Piña Roja</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="addSauce">
+            <input type="checkbox" id="addSauce" name="addSauce">
+            ¿Desea que le echemos las salsas en el pedido?
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label for="payment">Método de pago:</label>
+          <select id="payment" name="payment" required>
+            <option value="">Seleccione una opción</option>
+            <option value="efectivo">Efectivo</option>
+            <option value="transferencia">Transferencia</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="tower">Torre:</label>
+          <input type="text" id="tower" name="tower" required>
+        </div>
+
+        <div class="form-group">
+          <label for="apartment">Número de Apartamento:</label>
+          <input type="text" id="apartment" name="apartment" required>
+        </div>
+
+        <div class="form-group">
+          <label for="quantity">Cantidad de Unidades:</label>
+          <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+        </div>
+
+        <div class="form-group">
+          <label for="tip">Propina para el domiciliario (opcional):</label>
+          <input type="number" id="tip" name="tip" min="0" step="0.01">
+        </div>
+
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <button type="submit">Enviar Pedido</button>
+      </form>
     </div>
   </div>
 
   <footer class="footer">
     <p>© 2024 Platos de Claudia - Todos los derechos reservados</p>
   </footer>
+
+ <script src="app.js"></script>
 </body>
 </html>
