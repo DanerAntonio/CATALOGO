@@ -73,11 +73,21 @@ window.onclick = function(event) {
     closeModal();
   }
 }
-
 orderForm.addEventListener('submit', function(e) {
   e.preventDefault();
   const formData = new FormData(e.target);
   const orderDetails = Object.fromEntries(formData);
+  
+  // Calcular el total del pedido
+  const quantity = parseInt(orderDetails.quantity);
+  const productPrice = selectedProduct.price;
+  const total = productPrice * quantity;
+
+  // Obtener el valor de la propina (si la hay)
+  const tip = parseFloat(orderDetails.tip) || 0;
+
+  // Calcular el total con propina
+  const totalWithTip = total + tip;
   
   // Crear el mensaje para WhatsApp
   const sauces = formData.getAll('sauces');
@@ -89,9 +99,9 @@ orderForm.addEventListener('submit', function(e) {
 - Pago: ${orderDetails.payment}
 - Torre: ${orderDetails.tower}
 - Apartamento: ${orderDetails.apartment}
-- Cantidad: ${orderDetails.quantity}
-- Propina: ${orderDetails.tip || 'No propina'}
-- Total: $${(selectedProduct.price * orderDetails.quantity).toLocaleString()}`;
+- Cantidad: ${quantity}
+- Propina: $${tip.toLocaleString()}
+- Total: $${totalWithTip.toLocaleString()}`;
 
   // URL de WhatsApp con el mensaje
   const whatsappUrl = `https://wa.me/3112762618?text=${encodeURIComponent(message)}`;
