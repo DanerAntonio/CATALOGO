@@ -12,7 +12,8 @@ body {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 .header img {
-  width: 100px;
+  width: 120px; /* Aumentado un 20% desde 100px */
+  height: auto; /* Mantener la proporción */
   position: absolute;
   top: 10px;
   left: 10px;
@@ -102,16 +103,6 @@ body {
   bottom: 0;
   width: 100%;
 }
-@media (max-width: 768px) {
-  .product-card {
-    width: calc(50% - 20px);
-  }
-}
-@media (max-width: 480px) {
-  .product-card {
-    width: 100%;
-  }
-}
 .form-group {
   margin-bottom: 15px;
 }
@@ -154,4 +145,19 @@ button[type="submit"] {
 }
 button[type="submit"]:hover {
   background-color: #45a049;
+}
+@media (max-width: 768px) {
+  .product-card {
+    width: calc(50% - 20px);
+  }
+  .header img {
+    position: static;
+    display: block;
+    margin: 0 auto 10px;
+  }
+}
+@media (max-width: 480px) {
+  .product-card {
+    width: 100%;
+  }
 }
