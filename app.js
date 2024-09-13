@@ -73,6 +73,30 @@ window.onclick = function(event) {
     closeModal();
   }
 }
+
+function toggleAddressFields() {
+  const residenceSelect = document.getElementById('residence');
+  const customAddressGroup = document.getElementById('customAddressGroup');
+  const towerGroup = document.getElementById('towerGroup');
+  const apartmentGroup = document.getElementById('apartmentGroup');
+  const towerInput = document.getElementById('tower');
+  const apartmentInput = document.getElementById('apartment');
+  
+  if (residenceSelect.value === 'other') {
+    customAddressGroup.style.display = 'block';
+    towerGroup.style.display = 'none';
+    apartmentGroup.style.display = 'none';
+    towerInput.removeAttribute('required');
+    apartmentInput.removeAttribute('required');
+  } else {
+    customAddressGroup.style.display = 'none';
+    towerGroup.style.display = 'block';
+    apartmentGroup.style.display = 'block';
+    towerInput.setAttribute('required', '');
+    apartmentInput.setAttribute('required', '');
+  }
+}
+
 orderForm.addEventListener('submit', function(e) {
   e.preventDefault();
   const formData = new FormData(e.target);
@@ -91,14 +115,22 @@ orderForm.addEventListener('submit', function(e) {
   
   // Crear el mensaje para WhatsApp
   const sauces = formData.getAll('sauces');
+  const residenceValue = orderDetails.residence;
+  let addressInfo;
+
+  if (residenceValue === 'other') {
+    addressInfo = `Dirección: ${orderDetails.customAddress}`;
+  } else {
+    addressInfo = `Residencia: ${residenceValue}, Torre: ${orderDetails.tower}, Apartamento: ${orderDetails.apartment}`;
+  }
+
   const message = `Pedido de ${orderDetails.name}
 - Producto: ${selectedProduct.name}
 - Bebida: ${orderDetails.beverage}
 - Salsas: ${sauces.length > 0 ? sauces.join(', ') : 'No salsas'}
 - Salsas en el pedido: ${orderDetails.addSauce ? 'Sí' : 'No'}
 - Pago: ${orderDetails.payment}
-- Torre: ${orderDetails.tower}
-- Apartamento: ${orderDetails.apartment}
+- ${addressInfo}
 - Cantidad: ${quantity}
 - Propina: $${tip.toLocaleString()}
 - Total: $${totalWithTip.toLocaleString()}`;
@@ -109,3 +141,6 @@ orderForm.addEventListener('submit', function(e) {
 
   closeModal();
 });
+
+// Llamar a toggleAddressFields al cargar la página para configurar el estado inicial
+document.addEventListener('DOMContentLoaded', toggleAddressFields);
