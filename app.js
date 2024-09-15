@@ -11,6 +11,14 @@ const products = [
     price: 18000,
     image: 'img/CHUZO DE CERDO 3.jpeg'
   },
+
+  {
+    name: 'ARROZ PAIZA',
+    description: 'ARROZ PAISA PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
+    price: 25000,
+    image: 'img/deliciosos arroz paisa.jpg'
+  },
+
   {
     name: 'PATACÓN DE CARNE DESMECHADA',
     description: 'GUACAMOLE, HOGAO, QUESO MOZARELLA Y GASEOSA',
@@ -23,12 +31,7 @@ const products = [
     price: 20000,
     image: 'img/tamal-guatemalteco.webp'
   },
-  {
-    name: 'ARROZ PAISA',
-    description: 'PORCIÓN PARA DOS PERSONAS: COSTILLA BBQ, PAPAS A LA FRANCESA MÁS GASEOSA',
-    price: 20000,
-    image: 'img/arroz paiza1.jpg'
-  },
+ 
   {
     name: 'FIAMBRES',
     description: 'CHICHARRÓN, CARNE MOLIDA, HUEVO COCIDO, PURÉ DE PAPA MÁS GASEOSA',
