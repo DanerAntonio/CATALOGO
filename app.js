@@ -14,29 +14,29 @@ const products = [
 
   {
     name: 'ARROZ PAIZA',
-    description: 'ARROZ PAISA PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
+    description: 'ARROZ PAISA 600 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
     price: 25000,
     image: 'img/deliciosos arroz paisa.jpg'
   },
 
   {
-    name: 'PATACÓN DE CARNE DESMECHADA',
+    name: 'PATACÓN CON CARNE DE SOBREBARRIGA DESMECHADA',
     description: 'GUACAMOLE, HOGAO, QUESO MOZARELLA Y GASEOSA',
     price: 15000,
     image: 'img/patacon final.png'
   },
   {
-    name: 'TAMALES DE MASA O ARROZ',
-    description: '3 CARNES: CHICHARRÓN, CARNE DE CERDO, COSTILLA MÁS GASEOSA',
-    price: 20000,
-    image: 'img/tamal-guatemalteco.webp'
+    name: 'TAMALES DE MASA ',
+    description: '3 CARNES: CHICHARRÓN, CARNE DE CERDO, COSTILLA  DE CERDO PORCION DE AGUACATE MÁS GASEOSA',
+    price: 18000,
+    image: 'img/tamal con gaseosa.jpg'
   },
  
   {
     name: 'FIAMBRES',
-    description: 'CHICHARRÓN, CARNE MOLIDA, HUEVO COCIDO, PURÉ DE PAPA MÁS GASEOSA',
-    price: 20000,
-    image: 'img/Imagen de WhatsApp 2024-07-20 a las 12.50.23_ca91349f.jpg'
+    description: 'CHICHARRÓN, CARNE MOLIDA, HUEVO COCIDO, PURÉ DE PAPA,TAJADA DE MADURO AGUCATE MÁS GASEOSA',
+    price: 18000,
+    image: 'img/fiambre 19.jpg'
   }
 ];
 
