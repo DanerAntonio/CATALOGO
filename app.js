@@ -13,9 +13,16 @@ const products = [
   },
 
   {
-    name: 'ARROZ PAIZA',
-    description: 'ARROZ PAISA 600 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
+    name: 'ARROZ PAIZA ',
+    description: '#1 PROMOCIÓN: ARROZ PAISA 600 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
     price: 25000,
+    image: 'img/deliciosos arroz paisa.jpg'
+  },
+
+  {
+    name: 'ARROZ PAIZA ',
+    description: '#2 ARROZ PAISA 300 GARMOS PARA 1 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 1 GASEOSAS',
+    price: 15000,
     image: 'img/deliciosos arroz paisa.jpg'
   },
 
@@ -34,7 +41,7 @@ const products = [
  
   {
     name: 'FIAMBRES',
-    description: 'CHICHARRÓN, CARNE MOLIDA, HUEVO COCIDO, PURÉ DE PAPA,TAJADA DE MADURO AGUCATE MÁS GASEOSA',
+    description: 'CHICHARRÓN, CARNE MOLIDA,CHORIZO, HUEVO COCIDO, PURÉ DE PAPA,TAJADA DE MADURO AGUCATE MÁS GASEOSA',
     price: 18000,
     image: 'img/fiambre 19.jpg'
   }
