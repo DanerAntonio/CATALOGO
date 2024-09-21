@@ -11,21 +11,18 @@ const products = [
     price: 18000,
     image: 'img/CHUZO DE CERDO 3.jpeg'
   },
-
   {
     name: 'ARROZ PAIZA ',
     description: '#1 PROMOCIÓN: ARROZ PAISA 600 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
     price: 25000,
     image: 'img/deliciosos arroz paisa.jpg'
   },
-
   {
     name: 'ARROZ PAIZA ',
     description: '#2 ARROZ PAISA 300 GARMOS PARA 1 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 1 GASEOSAS',
     price: 15000,
     image: 'img/deliciosos arroz paisa.jpg'
   },
-
   {
     name: 'PATACÓN CON CARNE DE SOBREBARRIGA DESMECHADA',
     description: 'GUACAMOLE, HOGAO, QUESO MOZARELLA Y GASEOSA',
@@ -38,12 +35,21 @@ const products = [
     price: 18000,
     image: 'img/tamal con gaseosa.jpg'
   },
- 
   {
     name: 'FIAMBRES',
     description: 'CHICHARRÓN, CARNE MOLIDA,CHORIZO, HUEVO COCIDO, PURÉ DE PAPA,TAJADA DE MADURO AGUCATE MÁS GASEOSA',
     price: 18000,
     image: 'img/fiambre 19.jpg'
+  },
+  {
+    name: 'Video: NUESTROS TAMALES SE LES SALE LA CARNE',
+    description: 'Mira cómo preparamos nuestros deliciosos tamales',
+    video: 'videos/tamal desbordado.mp4'
+  },
+  {
+    name: 'Video: NUESTRO ARROZ PAISA',
+    description: 'Conoce nuestra cocina y nuestro proceso',
+    video: 'videos/arroz paisa video.mp4'
   }
 ];
 
@@ -57,13 +63,26 @@ let selectedProduct = null;
 products.forEach(product => {
   const productCard = document.createElement('div');
   productCard.className = 'product-card';
-  productCard.innerHTML = `
-    <img class="product-image" src="${product.image}" alt="${product.name}">
-    <h3>${product.name}</h3>
-    <p>${product.description}</p>
-    <span class="price">$${product.price.toLocaleString()}</span>
-    <button class="order-btn" onclick="openModal('${product.name}')">Quiero Este</button>
-  `;
+  
+  if (product.image) {
+    productCard.innerHTML = `
+      <img class="product-image" src="${product.image}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p>${product.description}</p>
+      <span class="price">$${product.price.toLocaleString()}</span>
+      <button class="order-btn" onclick="openModal('${product.name}')">Quiero Este</button>
+    `;
+  } else if (product.video) {
+    productCard.innerHTML = `
+      <video class="product-image" controls>
+        <source src="${product.video}" type="video/mp4">
+        Tu navegador no soporta el tag de video.
+      </video>
+      <h3>${product.name}</h3>
+      <p>${product.description}</p>
+    `;
+  }
+  
   productContainer.appendChild(productCard);
 });
 
