@@ -12,13 +12,13 @@ const products = [
     image: 'img/CHUZO DE CERDO 3.jpeg'
   },
   {
-    name: 'ARROZ PAIZA ',
+    name: 'ARROZ PAISA ',
     description: '#1 PROMOCIÓN: ARROZ PAISA 600 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
     price: 25000,
     image: 'img/deliciosos arroz paisa.jpg'
   },
   {
-    name: 'ARROZ PAIZA ',
+    name: 'ARROZ PAISA ',
     description: '#2 ARROZ PAISA 300 GARMOS PARA 1 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 1 GASEOSAS',
     price: 15000,
     image: 'img/deliciosos arroz paisa.jpg'
