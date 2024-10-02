@@ -17,6 +17,15 @@ const products = [
     price: 25000,
     image: 'img/deliciosos arroz paisa.jpg'
   },
+
+  {
+    name: 'COMBO ALITAS PICANTES,BBQ,A LA NARANJA ',
+    description: '8 ALITAS, PAPAS A LA FRANCESA, ENSALADA DULCE , GASEOSA ',
+    price: 18000,
+    image: 'img/alitas .jpg'
+  },
+
+
   {
     name: 'ARROZ PAISA ',
     description: '#2 ARROZ PAISA 300 GARMOS PARA 1 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 1 GASEOSAS',
