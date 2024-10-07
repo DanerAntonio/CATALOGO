@@ -33,6 +33,33 @@ const products = [
     image: 'img/deliciosos arroz paisa.jpg'
   },
   {
+    name: 'CERDO ASADO AL BARRIL ',
+    description: '300 GRAMOS DE CERDO ESPECIAL ASADO AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS',
+    price: 18000,
+    image: 'img/cerdo azado.jpg'
+  },
+  {
+    name: 'CHICHARRON ASADO AL BARRIL',
+    description: 'CHICHARRON  ASADO AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS',
+    price: 18000,
+    image: 'img/chicharron azado.jpg'
+  },
+  {
+    name: 'CHORIZO ASADO AL BARRIL ',
+    description: 'CHORIZO DEL ORIENTE  ASADO AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS',
+    price: 18000,
+    image: 'img/chorizo azado.jpg'
+  },
+
+  {
+    name: 'PICADA DEL BARRIL',
+    description:'PICADA AL BARRIL 6 PROTEINAS CERDO,CHORIZO,POLLO,CHICHARRON COSTILLA, MORCILLA,PAPA COCIDA SALSAS CHIMICURRI Y HOGADO PATACON,2 GASEOSAS',
+    price: 25000,
+    image: 'img/picada .jpg'
+  },
+
+
+  {
     name: 'PATACÓN CON CARNE DE SOBREBARRIGA DESMECHADA',
     description: 'GUACAMOLE, HOGAO, QUESO MOZARELLA Y GASEOSA',
     price: 15000,
