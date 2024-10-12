@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salud y Belleza - La Cocina de Claudia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <img src="img/logo la cocina de claudia .jpg" alt="Logo de La Cocina de Claudia" onerror="this.onerror=null; this.src='ruta-alternativa/logo-backup.png';">
+    <h1>Salud y Belleza</h1>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="nav-button">Inicio</a></li>
+        <li><a href="#" class="nav-button active">Salud y Belleza</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="cart-container">
+    <h2>¡No olvides tu pedido!</h2>
+    <p>Agrega tus productos favoritos al carrito y haz tu pedido fácilmente.</p>
+    <button class="cart-button" onclick="showCart()">Ver Carrito (<span id="cartCount">0</span>)</button>
+    <button class="order-button" onclick="sendWhatsAppOrder()">Hacer Pedido</button>
+  </div>
+
+  <div class="container">
+    <div class="product-row" id="beautyProductContainer">
+      <!-- Los productos de belleza se generarán dinámicamente con JavaScript -->
+    </div>
+  </div>
+
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Personaliza tu pedido</h2>
+      <form id="orderForm">
+        <div class="form-group">
+          <label for="quantity">Cantidad:</label>
+          <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+        </div>
+
+        <div class="form-group">
+          <label for="payment">Método de pago:</label>
+          <select id="payment" name="payment" required>
+            <option value="">Seleccione una opción</option>
+            <option value="efectivo">Efectivo</option>
+            <option value="transferencia">Transferencia</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="residence">Residencia:</label>
+          <select id="residence" name="residence" required onchange="toggleAddressFields()">
+            <option value="">Seleccione una opción</option>
+            <option value="Curazao">Curazao</option>
+            <option value="Toledo">Toledo</option>
+            <option value="La Vida es Bella">La Vida es Bella</option>
+            <option value="Tierra Linda 1">Tierra Linda 1</option>
+            <option value="Tierra Linda 2">Tierra Linda 2</option>
+            <option value="Madera Natural">Madera Natural</option>
+            <option value="Madera Esencial">Madera Esencial</option>
+            <option value="Madera Fina">Madera Fina</option>
+            <option value="Madera Silvestre">Madera Silvestre</option>
+            <option value="Puerta Madera">Puerta Madera</option>
+            <option value="other">Otra dirección</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="customAddressGroup" style="display: none;">
+          <label for="customAddress">Dirección:</label>
+          <input type="text" id="customAddress" name="customAddress">
+        </div>
+
+        <div class="form-group" id="towerGroup">
+          <label for="tower">Torre:</label>
+          <input type="text" id="tower" name="tower">
+        </div>
+
+        <div class="form-group" id="apartmentGroup">
+          <label for="apartment">Número de Apartamento:</label>
+          <input type="text" id="apartment" name="apartment">
+        </div>
+
+        <div class="form-group">
+          <label for="tip">Propina para el domiciliario (opcional):</label>
+          <input type="number" id="tip" name="tip" min="0" step="0.01">
+        </div>
+
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <button type="submit">Agregar al Carrito</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2024 Platos de Claudia - Todos los derechos reservados</p>
+  </footer>
+
+  <script src="saludybelleza.js"></script>
+</body>
+</html>
