@@ -1,22 +1,12 @@
 const beautyProducts = [
     {
-      name: 'Crema Facial Hidratante',
-      description: 'Hidrata y nutre tu piel con ingredientes naturales',
-      price: 25000,
-      image: 'img/crema-facial.jpg'
+      name: 'Colageno Natural',
+      description: 'Colageno a base de mano de res,alibia dolores de rodilla, mejora articulaciones , rejuvenece la piel , vitamina para el cerebro. Su uso es facil mantener en refigeracion y consumo diario con cualquier alimento , jugos , bebidas calientes etc ',
+      price: 30000,
+      image: 'img/COLAGENO CON JUGO.jpg'
     },
-    {
-      name: 'Aceite Esencial de Lavanda',
-      description: 'Relájate con el aroma calmante de la lavanda',
-      price: 18000,
-      image: 'img/aceite-lavanda.jpg'
-    },
-    {
-      name: 'Mascarilla de Arcilla',
-      description: 'Limpia profundamente tus poros con arcilla natural',
-      price: 15000,
-      image: 'img/mascarilla-arcilla.jpg'
-    },
+  
+
     // Agrega más productos de belleza aquí
   ];
   
