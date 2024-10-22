@@ -1,192 +1,112 @@
 const beautyProducts = [
-    {
+  {
       name: 'Colageno Natural',
-      description: 'Colageno a base de mano de res,alibia dolores de rodilla, mejora articulaciones , rejuvenece la piel , vitamina para el cerebro. Su uso es facil mantener en refigeracion y consumo diario con cualquier alimento , jugos , bebidas calientes etc ',
+      description: 'Colageno a base de mano de res, alivia dolores de rodilla, mejora articulaciones, rejuvenece la piel, vitamina para el cerebro. Su uso es fácil: mantener en refrigeración y consumo diario con cualquier alimento, jugos, bebidas calientes, etc.',
       price: 30000,
       image: 'img/COLAGENO CON JUGO.jpg'
-    },
-  
+  },
+  // Agrega más productos aquí
+];
 
-    // Agrega más productos de belleza aquí
-  ];
-  
+let selectedProduct = null;
+
+document.addEventListener('DOMContentLoaded', () => {
   const beautyProductContainer = document.getElementById('beautyProductContainer');
   const modal = document.getElementById('orderModal');
   const closeBtn = document.getElementsByClassName('close')[0];
   const orderForm = document.getElementById('orderForm');
-  let selectedProduct = null;
-  let cart = [];
-  
-  // Generar las tarjetas de productos de belleza dinámicamente
-  beautyProducts.forEach(product => {
-    const productCard = document.createElement('div');
-    productCard.className = 'product-card';
-    
-    productCard.innerHTML = `
-      <img class="product-image" src="${product.image}" alt="${product.name}">
-      <h3>${product.name}</h3>
-      <p>${product.description}</p>
-      <span class="price">$${product.price.toLocaleString()}</span>
-      <button class="order-btn" onclick="openModal('${product.name}')">Quiero Este</button>
-    `;
-    
-    beautyProductContainer.appendChild(productCard);
-  });
-  
+
+  function renderProducts() {
+      beautyProductContainer.innerHTML = '';
+      beautyProducts.forEach(product => {
+          const productCard = document.createElement('div');
+          productCard.className = 'product-card';
+          
+          productCard.innerHTML = `
+              <img class="product-image" src="${product.image}" alt="${product.name}">
+              <h3>${product.name}</h3>
+              <p>${product.description}</p>
+              <span class="price">$${product.price.toLocaleString()}</span>
+              <button class="order-btn" data-product="${product.name}">Quiero Este</button>
+          `;
+          beautyProductContainer.appendChild(productCard);
+      });
+  }
+
   function openModal(productName) {
-    selectedProduct = beautyProducts.find(p => p.name === productName);
-    modal.style.display = 'block';
-    
-    // Limpiar el formulario
-    orderForm.reset();
+      selectedProduct = beautyProducts.find(p => p.name === productName);
+      modal.style.display = 'block';
+      orderForm.reset();
   }
-  
+
   function closeModal() {
-    modal.style.display = 'none';
+      modal.style.display = 'none';
   }
-  
-  closeBtn.onclick = closeModal;
-  
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      closeModal();
-    }
-  }
-  
+
   function toggleAddressFields() {
-    const residenceSelect = document.getElementById('residence');
-    const customAddressGroup = document.getElementById('customAddressGroup');
-    const towerGroup = document.getElementById('towerGroup');
-    const apartmentGroup = document.getElementById('apartmentGroup');
-    const towerInput = document.getElementById('tower');
-    const apartmentInput = document.getElementById('apartment');
-    
-    if (residenceSelect.value === 'other') {
-      customAddressGroup.style.display = 'block';
-      towerGroup.style.display = 'none';
-      apartmentGroup.style.display = 'none';
-      towerInput.removeAttribute('required');
-      apartmentInput.removeAttribute('required');
-    } else {
-      customAddressGroup.style.display = 'none';
-      towerGroup.style.display = 'block';
-      apartmentGroup.style.display = 'block';
-      towerInput.setAttribute('required', '');
-      apartmentInput.setAttribute('required', '');
-    }
-  }
-  
-  orderForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const orderDetails = Object.fromEntries(formData);
-    
-    // Calcular el total del pedido
-    const quantity = parseInt(orderDetails.quantity);
-    const productPrice = selectedProduct.price;
-    const total = productPrice * quantity;
-  
-    // Obtener el valor de la propina (si la hay)
-    const tip = parseFloat(orderDetails.tip) || 0;
-  
-    // Calcular el total con propina
-    const totalWithTip = total + tip;
-    
-    // Crear el objeto del pedido
-    const order = {
-      product: selectedProduct.name,
-      quantity: quantity,
-      price: productPrice,
-      total: total,
-      ...orderDetails
-    };
-    
-    // Agregar al carrito
-    cart.push(order);
-    
-    // Actualizar el contador del carrito
-    updateCartCount();
-    
-    closeModal();
-  });
-  
-  function updateCartCount() {
-    const cartCount = document.getElementById('cartCount');
-    if (cartCount) {
-      cartCount.textContent = cart.length;
-    }
-  }
-  
-  function showCart() {
-    let cartContent = 'Carrito de Compras:\n\n';
-    let total = 0;
-    
-    cart.forEach((item, index) => {
-      cartContent += `${index + 1}. ${item.product} - Cantidad: ${item.quantity} - Subtotal: $${(item.price * item.quantity).toLocaleString()}\n`;
-      total += item.price * item.quantity;
-    });
-    
-    cartContent += `\nTotal: $${total.toLocaleString()}`;
-    
-    alert(cartContent);
-  }
-  
-  function sendWhatsAppOrder() {
-    if (cart.length === 0) {
-      alert('El carrito está vacío. Agrega productos antes de hacer el pedido.');
-      return;
-    }
-    
-    let message = 'Pedido de Salud y Belleza - La Cocina de Claudia:\n\n';
-    let total = 0;
-    
-    cart.forEach((item, index) => {
-      message += `${index + 1}. ${item.product}\n`;
-      message += `   Cantidad: ${item.quantity}\n`;
-      message += `   Subtotal: $${(item.price * item.quantity).toLocaleString()}\n\n`;
-      total += item.price * item.quantity;
-    });
-    
-    message += `Total del pedido: $${total.toLocaleString()}\n\n`;
-    
-    // Agregar información del cliente y detalles de entrega
-    const lastItem = cart[cart.length - 1];
-    if (lastItem) {
-      message += `Nombre: ${lastItem.name || 'No especificado'}\n`;
-      message += `Método de pago: ${lastItem.payment || 'No especificado'}\n`;
+      const residenceSelect = document.getElementById('residence');
+      const customAddressGroup = document.getElementById('customAddressGroup');
+      const towerGroup = document.getElementById('towerGroup');
+      const apartmentGroup = document.getElementById('apartmentGroup');
       
-      if (lastItem.residence === 'other') {
-        message += `Dirección: ${lastItem.customAddress || 'No especificada'}\n`;
+      if (residenceSelect.value === 'other') {
+          customAddressGroup.style.display = 'block';
+          towerGroup.style.display = 'none';
+          apartmentGroup.style.display = 'none';
       } else {
-        message += `Residencia: ${lastItem.residence || 'No especificada'}\n`;
-        message += `Torre: ${lastItem.tower || 'No especificada'}\n`;
-        message += `Apartamento: ${lastItem.apartment || 'No especificado'}\n`;
+          customAddressGroup.style.display = 'none';
+          towerGroup.style.display = 'block';
+          apartmentGroup.style.display = 'block';
+      }
+  }
+
+  function sendWhatsAppOrder(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const orderDetails = Object.fromEntries(formData);
+      
+      const quantity = parseInt(orderDetails.quantity);
+      const productPrice = selectedProduct.price;
+      const total = productPrice * quantity;
+      
+      let message = `Pedido de Salud y Belleza - La Cocina de Claudia:\n\n`;
+      message += `Producto: ${selectedProduct.name}\n`;
+      message += `Cantidad: ${quantity}\n`;
+      message += `Precio unitario: $${productPrice.toLocaleString()}\n`;
+      message += `Total: $${total.toLocaleString()}\n\n`;
+      message += `Nombre: ${orderDetails.name}\n`;
+      message += `Método de pago: ${orderDetails.payment}\n`;
+      
+      if (orderDetails.residence === 'other') {
+          message += `Dirección: ${orderDetails.customAddress}\n`;
+      } else {
+          message += `Residencia: ${orderDetails.residence}\n`;
+          message += `Torre: ${orderDetails.tower}\n`;
+          message += `Apartamento: ${orderDetails.apartment}\n`;
       }
       
-      if (lastItem.tip) {
-        message += `Propina: $${parseFloat(lastItem.tip).toLocaleString()}\n`;
-      }
-    }
-    
-    // Codificar el mensaje para la URL
-    const encodedMessage = encodeURIComponent(message);
-    
-    // Número de WhatsApp del negocio
-    const phoneNumber = '3112762618';
-    
-    // Crear la URL de WhatsApp
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    
-    // Abrir WhatsApp en una nueva ventana
-    window.open(whatsappUrl, '_blank');
-    
-    // Limpiar el carrito después de enviar el pedido
-    cart = [];
-    updateCartCount();
-    
-    // Mostrar confirmación al usuario
-    alert('Tu pedido ha sido enviado por WhatsApp. ¡Gracias por tu compra!');
+      const whatsappUrl = `https://wa.me/3112762618?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+      
+      closeModal();
   }
-  
-  // Llamar a toggleAddressFields al cargar la página para configurar el estado inicial
-  document.addEventListener('DOMContentLoaded', toggleAddressFields);
+
+  renderProducts();
+
+  beautyProductContainer.addEventListener('click', (e) => {
+      if (e.target.classList.contains('order-btn')) {
+          const productName = e.target.getAttribute('data-product');
+          openModal(productName);
+      }
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+          closeModal();
+      }
+  });
+
+  orderForm.addEventListener('submit', sendWhatsAppOrder);
+  document.getElementById('residence').addEventListener('change', toggleAddressFields);
+});

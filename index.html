@@ -1,165 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Cocina de Claudia</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Cocina de Claudia</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="header">
-    <img src="img/logo la cocina de claudia .jpg" alt="Logo de La Cocina de Claudia" onerror="this.onerror=null; this.src='ruta-alternativa/logo-backup.png';">
-    <h1>Platos de Claudia</h1>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#" class="nav-button active">Inicio</a></li>
-        <li><a href="saludybelleza.html" class="nav-button">Salud y Belleza</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header class="header">
+        <img src="img/logo la cocina de claudia .jpg" alt="Logo de La Cocina de Claudia" onerror="this.onerror=null; this.src='ruta-alternativa/logo-backup.png';">
+        <h1>Platos de Claudia</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#" class="nav-button active">Inicio</a></li>
+                <li><a href="saludybelleza.html" class="nav-button">Salud y Belleza</a></li>
+                <li><a href="tortas.html" class="nav-button">Tortas de Cumpleaños</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <div class="cart-container">
-    <h2>¡No olvides tu pedido!</h2>
-    <p>Agrega tus platos favoritos al carrito y haz tu pedido fácilmente.</p>
-    <button class="cart-button" onclick="showCart()">Ver Carrito (<span id="cartCount">0</span>)</button>
-    <button class="order-button" onclick="sendWhatsAppOrder()">Hacer Pedido</button>
-  </div>
-
-  <div class="container">
-    <div class="product-row" id="productContainer">
-      <!-- Los productos se generarán dinámicamente con JavaScript -->
+    <div class="main-container">
+        <div class="content">
+            <div class="product-grid" id="productContainer">
+                <!-- Los productos se generarán dinámicamente con JavaScript -->
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div id="orderModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Personaliza tu pedido</h2>
-      <form id="orderForm">
-        <div id="wingFlavors" class="form-group" style="display: none;">
-          <label>Selecciona hasta dos sabores de alitas:</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox" name="wingFlavors" value="Picantes"> Picantes</label>
-            <label><input type="checkbox" name="wingFlavors" value="BBQ"> BBQ</label>
-            <label><input type="checkbox" name="wingFlavors" value="A la naranja"> A la naranja</label>
-          </div>
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Personaliza tu pedido</h2>
+            <form id="orderForm">
+                <div id="wingFlavors" class="form-group" style="display: none;">
+                    <label>Selecciona hasta dos sabores de alitas:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="wingFlavors" value="Picantes"> Picantes</label>
+                        <label><input type="checkbox" name="wingFlavors" value="BBQ"> BBQ</label>
+                        <label><input type="checkbox" name="wingFlavors" value="A la naranja"> A la naranja</label>
+                    </div>
+                </div>
+
+                <div id="picadaOptions" class="form-group" style="display: none;">
+                    <label>Selecciona las opciones de la picada (6 en total):</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="picadaOptions" value="Cerdo"> Cerdo</label>
+                        <label><input type="checkbox" name="picadaOptions" value="Chorizo"> Chorizo</label>
+                        <label><input type="checkbox" name="picadaOptions" value="Pollo"> Pollo</label>
+                        <label><input type="checkbox" name="picadaOptions" value="Chicharrón"> Chicharrón</label>
+                        <label><input type="checkbox" name="picadaOptions" value="Costilla"> Costilla</label>
+                        <label><input type="checkbox" name="picadaOptions" value="Morcilla"> Morcilla</label>
+                    </div>
+                    <label>Selecciona las opciones que quieres dobles:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="picadaDouble" value="Cerdo"> Cerdo</label>
+                        <label><input type="checkbox" name="picadaDouble" value="Chorizo"> Chorizo</label>
+                        <label><input type="checkbox" name="picadaDouble" value="Pollo"> Pollo</label>
+                        <label><input type="checkbox" name="picadaDouble" value="Chicharrón"> Chicharrón</label>
+                        <label><input type="checkbox" name="picadaDouble" value="Costilla"> Costilla</label>
+                        <label><input type="checkbox" name="picadaDouble" value="Morcilla"> Morcilla</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="beverage">Selecciona el sabor de tu bebida:</label>
+                    <select id="beverage" name="beverage" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="Manzana">Manzana</option>
+                        <option value="Naranjada">Naranjada</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Selecciona las salsas:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="sauces" value="mayonesa"> Mayonesa</label>
+                        <label><input type="checkbox" name="sauces" value="salsa rosada"> Salsa Rosada</label>
+                        <label><input type="checkbox" name="sauces" value="ají"> Ají</label>
+                        <label><input type="checkbox" name="sauces" value="bbq"> BBQ</label>
+                        <label><input type="checkbox" name="sauces" value="pina roja"> Salsa Roja</label>
+                        <label><input type="checkbox" name="sauces" value="pina"> Salsa Piña</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="addSauce">
+                        <input type="checkbox" id="addSauce" name="addSauce">
+                        ¿Desea que le echemos las salsas en el pedido?
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="payment">Método de pago:</label>
+                    <select id="payment" name="payment" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="efectivo">Efectivo</option>
+                        <option value="transferencia">Transferencia</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="residence">Residencia:</label>
+                    <select id="residence" name="residence" required onchange="toggleAddressFields()">
+                        <option value="">Seleccione una opción</option>
+                        <option value="Curazao">Curazao</option>
+                        <option value="Toledo">Toledo</option>
+                        <option value="La Vida es Bella">La Vida es Bella</option>
+                        <option value="Tierra Linda 1">Tierra Linda 1</option>
+                        <option value="Tierra Linda 2">Tierra Linda 2</option>
+                        <option value="Madera Natural">Madera Natural</option>
+                        <option value="Madera Esencial">Madera Esencial</option>
+                        <option value="Madera Fina">Madera Fina</option>
+                        <option value="Madera Silvestre">Madera Silvestre</option>
+                        <option value="Puerta Madera">Puerta Madera</option>
+                        <option value="other">Otra dirección</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="customAddressGroup" style="display: none;">
+                    <label for="customAddress">Dirección:</label>
+                    <input type="text" id="customAddress" name="customAddress">
+                </div>
+
+                <div class="form-group" id="towerGroup">
+                    <label for="tower">Torre:</label>
+                    <input type="text" id="tower" name="tower">
+                </div>
+
+                <div class="form-group" id="apartmentGroup">
+                    <label for="apartment">Número de Apartamento:</label>
+                    <input type="text" id="apartment" name="apartment">
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Cantidad de Unidades:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tip">Propina para el domiciliario (opcional):</label>
+                    <input type="number" id="tip" name="tip" min="0" step="0.01">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <button type="submit">Hacer Pedido</button>
+            </form>
         </div>
-
-        <div id="picadaOptions" class="form-group" style="display: none;">
-          <label>Selecciona las opciones de la picada (6 en total):</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox" name="picadaOptions" value="Cerdo"> Cerdo</label>
-            <label><input type="checkbox" name="picadaOptions" value="Chorizo"> Chorizo</label>
-            <label><input type="checkbox" name="picadaOptions" value="Pollo"> Pollo</label>
-            <label><input type="checkbox" name="picadaOptions" value="Chicharrón"> Chicharrón</label>
-            <label><input type="checkbox" name="picadaOptions" value="Costilla"> Costilla</label>
-            <label><input type="checkbox" name="picadaOptions" value="Morcilla"> Morcilla</label>
-          </div>
-          <label>Selecciona las opciones que quieres dobles:</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox" name="picadaDouble" value="Cerdo"> Cerdo</label>
-            <label><input type="checkbox" name="picadaDouble" value="Chorizo"> Chorizo</label>
-            <label><input type="checkbox" name="picadaDouble" value="Pollo"> Pollo</label>
-            <label><input type="checkbox" name="picadaDouble" value="Chicharrón"> Chicharrón</label>
-            <label><input type="checkbox" name="picadaDouble" value="Costilla"> Costilla</label>
-            <label><input type="checkbox" name="picadaDouble" value="Morcilla"> Morcilla</label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="beverage">Selecciona el sabor de tu bebida:</label>
-          <select id="beverage" name="beverage" required>
-            <option value="">Seleccione una opción</option>
-            <option value="Manzana">Manzana</option>
-            <option value="Naranjada">Naranjada</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Selecciona las salsas:</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox" name="sauces" value="mayonesa"> Mayonesa</label>
-            <label><input type="checkbox" name="sauces" value="salsa rosada"> Salsa Rosada</label>
-            <label><input type="checkbox" name="sauces" value="ají"> Ají</label>
-            <label><input type="checkbox" name="sauces" value="bbq"> BBQ</label>
-            <label><input type="checkbox" name="sauces" value="pina roja"> Salsa Roja</label>
-            <label><input type="checkbox" name="sauces" value="pina"> Salsa Piña</label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="addSauce">
-            <input type="checkbox" id="addSauce" name="addSauce">
-            ¿Desea que le echemos las salsas en el pedido?
-          </label>
-        </div>
-
-        <div class="form-group">
-          <label for="payment">Método de pago:</label>
-          <select id="payment" name="payment" required>
-            <option value="">Seleccione una opción</option>
-            <option value="efectivo">Efectivo</option>
-            <option value="transferencia">Transferencia</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="residence">Residencia:</label>
-          <select id="residence" name="residence" required onchange="toggleAddressFields()">
-            <option value="">Seleccione una opción</option>
-            <option value="Curazao">Curazao</option>
-            <option value="Toledo">Toledo</option>
-            <option value="La Vida es Bella">La Vida es Bella</option>
-            <option value="Tierra Linda 1">Tierra Linda 1</option>
-            <option value="Tierra Linda 2">Tierra Linda 2</option>
-            <option value="Madera Natural">Madera Natural</option>
-            <option value="Madera Esencial">Madera Esencial</option>
-            <option value="Madera Fina">Madera Fina</option>
-            <option value="Madera Silvestre">Madera Silvestre</option>
-            <option value="Puerta Madera">Puerta Madera</option>
-            <option value="other">Otra dirección</option>
-          </select>
-        </div>
-
-        <div class="form-group" id="customAddressGroup" style="display: none;">
-          <label for="customAddress">Dirección:</label>
-          <input type="text" id="customAddress" name="customAddress">
-        </div>
-
-        <div class="form-group" id="towerGroup">
-          <label for="tower">Torre:</label>
-          <input type="text" id="tower" name="tower">
-        </div>
-
-        <div class="form-group" id="apartmentGroup">
-          <label for="apartment">Número de Apartamento:</label>
-          <input type="text" id="apartment" name="apartment">
-        </div>
-
-        <div class="form-group">
-          <label for="quantity">Cantidad de Unidades:</label>
-          <input type="number" id="quantity" name="quantity" min="1" value="1" required>
-        </div>
-
-        <div class="form-group">
-          <label for="tip">Propina para el domiciliario (opcional):</label>
-          <input type="number" id="tip" name="tip" min="0" step="0.01">
-        </div>
-
-        <div class="form-group">
-          <label for="name">Nombre:</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-
-        <button type="submit">Agregar al Carrito</button>
-      </form>
     </div>
-  </div>
 
-  <footer class="footer">
-    <p>© 2024 Platos de Claudia - Todos los derechos reservados</p>
-  </footer>
+    <footer class="footer">
+        <p>© 2024 Platos de Claudia - Todos los derechos reservados</p>
+    </footer>
 
-  <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
