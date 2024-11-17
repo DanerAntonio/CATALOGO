@@ -1,126 +1,125 @@
 // Array de productos
 const products = [
     {
+        id: 1,
         name: 'CHUZOS DE POLLO',
         description: 'AREPA CON QUESO MOZARELLA, ENSALADA DULCE, TOCINETA, MAICITOS, PAPAS A LA FRANCESA Y GASEOSA',
-        price: 18000,
+        price: 24300, // Precio original: 18000
         image: 'img/CHUZO DE POLLO 2.jpeg'
     },
     {
+        id: 2,
         name: 'CHUZOS DE CERDO',
         description: 'AREPA CON QUESO MOZARELLA, ENSALADA DULCE, TOCINETA, MAICITOS, PAPAS A LA FRANCESA Y GASEOSA',
-        price: 18000,
+        price: 24300, // Precio original: 18000
         image: 'img/CHUZO DE CERDO 3.jpeg'
     },
     {
-        name: 'MONDONGO',
-        description: ' MONDONGO,COSTILLA DE CERDO AHUMADA, PERNIL DE CERDO,SECO , BANANO , ENSALADA,GUARAPO O CLARO',
-        price: 20000,
-        image: 'img/MONDONGOO.jpeg'
-    },
-    {
-        name: 'SANCOCHO TRIFASICO ANTIOQUEÑO',
-        description: ' CARNE DE SOBREBARRIGA,COSTILLA DE CERDO AHUMADA, POLLO,SECO , AGUCATE, ENSALADA,GUARAPO O CLARO',
-        price: 20000,
-        image: 'img/TRIFASICO 1.jpeg'
-    },
-    {
-        name: 'BANDEJA PAISA',
-        description: ' CARNE A LA PLANCHA,CHORIZO, CHICHARRN,FRIJOL,HUEVO,TAJADA DE MADURO,AGUACATE,SECO , ENSALADA,GUARAPO O CLARO',
-        price: 20000,
-       image: 'img/bandeja paisa.jpg'
-    },
-
-    {
+        id: 3,
         name: 'ARROZ PAISA (2 PERSONAS)',
         description: '#1 PROMOCIÓN: ARROZ PAISA 600 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
-        price: 25000,
+        price: 33750, // Precio original: 25000
         image: 'img/deliciosos arroz paisa.jpg'
     },
     {
+        id: 4,
         name: 'ARROZ PAISA (4 PERSONAS)',
         description: ' PROMOCIÓN: ARROZ PAISA 1200 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
-        price: 45000,
+        price: 60750, // Precio original: 45000
         image: 'img/deliciosos arroz paisa.jpg'
     },
     {
+        id: 5,
         name: 'COMBO ALITAS PICANTES,BBQ,A LA NARANJA (1 PERSONA) ',
         description: '8 ALITAS, PAPAS A LA FRANCESA, ENSALADA DULCE , GASEOSA ',
-        price: 18000,
+        price: 24300, // Precio original: 18000
         image: 'img/alitas .jpg'
     },
     {
+        id: 6,
         name: 'COMBO ALITAS PICANTES,BBQ,A LA NARANJA (2 PERSONAS)',
         description: '16 ALITAS, PAPAS A LA FRANCESA, ENSALADA DULCE , GASEOSA ',
-        price: 32000,
+        price: 43200, // Precio original: 32000
         image: 'img/alitas .jpg'
     },
     {
+        id: 7,
         name: 'ARROZ PAISA ',
         description: '#2 ARROZ PAISA 300 GARMOS PARA 1 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 1 GASEOSAS',
-        price: 15000,
+        price: 20250, // Precio original: 15000
         image: 'img/deliciosos arroz paisa.jpg'
     },
     {
+        id: 8,
         name: 'CARNE DE CERDO ESPECIAL ASADO AL BARRIL ',
         description: '300 GRAMOS DE CERDO ESPECIAL ASADO AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS',
-        price: 18000,
-        image: 'img/CARNE ASADA 2.jpeg'
+        price: 24300, // Precio original: 18000
+        image: 'img/cerdo azado.jpg'
     },
     {
+        id: 9,
         name: 'CARNE DE RES ASADA AL BARRIL ',
         description: '300 GRAMOS DE RES ESPECIAL ASADA AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS',
-        price: 21000,
-        image: 'img/CARNE ASADA 2.jpeg'
+        price: 28350, // Precio original: 21000
+        image: 'img/cerdo azado.jpg'
     },
     {
+        id: 10,
         name: 'CHICHARRON ASADO AL BARRIL',
         description: 'CHICHARRON  ASADO AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS',
-        price: 18000,
+        price: 24300, // Precio original: 18000
         image: 'img/chicharron azado.jpg'
     },
     {
+        id: 11,
         name: 'CHORIZO ASADO AL BARRIL ',
         description: 'CHORIZO DEL ORIENTE  ASADO AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS',
-        price: 18000,
-        image: 'img/chorizo asado1.jpeg'
+        price: 24300, // Precio original: 18000
+        image: 'img/chorizo azado.jpg'
     },
     {
+        id: 12,
         name: 'PICADA DEL BARRIL(2 PERSONAS)',
         description:'PICADA AL BARRIL 6 PROTEINAS CERDO,CHORIZO,POLLO,CHICHARRON COSTILLA, MORCILLA,PAPA COCIDA SALSAS CHIMICURRI Y HOGADO PATACON,2 GASEOSAS',
-        price: 25000,
+        price: 33750, // Precio original: 25000
         image: 'img/picada .jpg'
     },
     {
+        id: 13,
         name: 'PICADA DEL BARRIL FAMILIAR(4 PERSONAS)',
         description:'PICADA AL BARRIL 6 PROTEINAS CERDO,CHORIZO,POLLO,CHICHARRON COSTILLA, MORCILLA,PAPA COCIDA SALSAS CHIMICURRI Y HOGADO PATACON,4 GASEOSAS',
-        price: 45000,
+        price: 60750, // Precio original: 45000
         image: 'img/picada familiar.jpg'
     },
     {
+        id: 14,
         name: 'PATACÓN CON CARNE DE SOBREBARRIGA DESMECHADA',
         description: 'GUACAMOLE, HOGAO, QUESO MOZARELLA Y GASEOSA',
-        price: 15000,
+        price: 20250, // Precio original: 15000
         image: 'img/patacon final.png'
     },
     {
+        id: 15,
         name: 'TAMALES DE MASA ',
         description: '3 CARNES: CHICHARRÓN, CARNE DE CERDO, COSTILLA  DE CERDO PORCION DE AGUACATE MÁS GASEOSA',
-        price: 18000,
+        price: 24300, // Precio original: 18000
         image: 'img/tamal con gaseosa.jpg'
     },
     {
+        id: 16,
         name: 'FIAMBRES',
         description: 'CHICHARRÓN, CARNE MOLIDA,CHORIZO, HUEVO COCIDO, PURÉ DE PAPA,TAJADA DE MADURO AGUCATE MÁS GASEOSA',
-        price: 18000,
+        price: 24300, // Precio original: 18000
         image: 'img/fiambre 19.jpg'
     },
     {
+        id: 17,
         name: 'Video: NUESTROS TAMALES SE LES SALE LA CARNE',
         description: 'Mira cómo preparamos nuestros deliciosos tamales',
         video: 'videos/tamal desbordado.mp4'
     },
     {
+        id: 18,
         name: 'Video: NUESTRO ARROZ PAISA',
         description: 'Conoce nuestra cocina y nuestro proceso',
         video: 'videos/arroz paisa video.mp4'
@@ -145,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (product.image) {
                 productCard.innerHTML = `
                     <img class="product-image" src="${product.image}" alt="${product.name}">
-                    <h3>${product.name}</h3>
+                    <h3>${product.id}. ${product.name}</h3>
                     <p>${product.description}</p>
                     <span class="price">$${product.price.toLocaleString()}</span>
                     <button class="order-btn" data-product="${product.name}">Hacer Pedido</button>
@@ -156,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <source src="${product.video}" type="video/mp4">
                         Tu navegador no soporta el tag de video.
                     </video>
-                    <h3>${product.name}</h3>
+                    <h3>${product.id}. ${product.name}</h3>
                     <p>${product.description}</p>
                 `;
             }
@@ -169,8 +168,8 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'block';
         orderForm.reset();
 
-        wingFlavorsDiv.style.display = productName === 'COMBO ALITAS PICANTES,BBQ,A LA NARANJA ' ? 'block' : 'none';
-        picadaOptionsDiv.style.display = productName === 'PICADA DEL BARRIL' ? 'block' : 'none';
+        wingFlavorsDiv.style.display = productName.includes('COMBO ALITAS') ? 'block' : 'none';
+        picadaOptionsDiv.style.display = productName.includes('PICADA DEL BARRIL') ? 'block' : 'none';
     }
 
     function closeModal() {
@@ -200,12 +199,12 @@ document.addEventListener('DOMContentLoaded', function() {
         message += `Cantidad: ${orderDetails.quantity}\n`;
         message += `Precio unitario: $${selectedProduct.price.toLocaleString()}\n`;
 
-        if (selectedProduct.name === 'COMBO ALITAS PICANTES,BBQ,A LA NARANJA ') {
+        if (selectedProduct.name.includes('COMBO ALITAS')) {
             const wingFlavors = orderDetails.wingFlavors ? (Array.isArray(orderDetails.wingFlavors) ? orderDetails.wingFlavors.join(', ') : orderDetails.wingFlavors) : 'No seleccionado';
             message += `Sabores de alitas: ${wingFlavors}\n`;
         }
 
-        if (selectedProduct.name === 'PICADA DEL BARRIL') {
+        if (selectedProduct.name.includes('PICADA DEL BARRIL')) {
             const picadaOptions = orderDetails.picadaOptions ? (Array.isArray(orderDetails.picadaOptions) ? orderDetails.picadaOptions.join(', ') : orderDetails.picadaOptions) : 'No seleccionado';
             const picadaDouble = orderDetails.picadaDouble ? (Array.isArray(orderDetails.picadaDouble) ? orderDetails.picadaDouble.join(', ') : orderDetails.picadaDouble) : 'Ninguno';
             message += `Opciones de picada: ${picadaOptions}\n`;
@@ -274,7 +273,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const wingFlavorCheckboxes = document.querySelectorAll('input[name="wingFlavors"]');
     wingFlavorCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', function() {
-            const checkedFlavors = document.querySelectorAll('input[name="wingFlavors"]:checked');
+            const checkedFlavors = 
+ document.querySelectorAll('input[name="wingFlavors"]:checked');
             if (checkedFlavors.length > 2) {
                 this.checked = false;
             }

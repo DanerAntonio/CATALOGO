@@ -1,0 +1,332 @@
+const fs = require('fs');
+
+const html = `
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platos de Claudia</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 1.5rem;
+        }
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin: 0 0 0.5rem 0;
+            color: #333;
+        }
+        .product-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin: 0.5rem 0;
+            line-height: 1.4;
+        }
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4CAF50;
+            margin: 1rem 0;
+        }
+        .order-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+        .order-button:hover {
+            background-color: #45a049;
+        }
+        .footer-message {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+        .footer-message a {
+            color: #8CE38C;
+            text-decoration: none;
+        }
+        .footer-message a:hover {
+            text-decoration: underline;
+        }
+        .footer-message p {
+            margin: 0.5rem 0;
+        }
+        video.product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Platos de Claudia</h1>
+    </div>
+    <div class="product-container" id="productContainer">
+    </div>
+    <div class="footer-message">
+        <p>🏍 Entrega rápida en moto</p>
+        <p>💰 Propina voluntaria para el mensajero</p>
+        <p>🆓 ¡Domicilio INCLUIDO!</p>
+        <p>🕰 Horario de atención: ¡Estamos activos desde ya y hasta las 11:30 PM!</p>
+        <p>🌟 ¡Visita nuestra página oficial y personaliza tu pedido!</p>
+        <p><a href="https://danerantonio.github.io/CATALOGO/">👉 https://danerantonio.github.io/CATALOGO/</a></p>
+        <p>Es más fácil: ¡Dale en "Quiero este" y pide!</p>
+        <p>📱 Contáctanos:</p>
+        <p>WhatsApp:</p>
+        <p><a href="https://wa.me/573112762618">• https://wa.me/573112762618</a></p>
+        <p><a href="https://wa.me/573158151695">• https://wa.me/573158151695</a></p>
+        <p>Telegram:</p>
+        <p><a href="https://t.me/3112762618">• https://t.me/3112762618</a></p>
+        <p><a href="https://t.me/3158151695">• https://t.me/3158151695</a></p>
+        <p>¡Haz tu pedido ya y disfruta en casa! 📞🏠</p>
+        <p>🙏 Un feliz día, vecinos. ¡Dios los bendiga! Estamos muy agradecidos con su apoyo.</p>
+        <p>En LA COCINA DE CLAUDIA estamos para servirles. 🥘❤</p>
+    </div>
+
+    <script>
+        const products = [
+            {
+                id: 1,
+                name: 'Brocheta Campestre',
+                originalName: 'CHUZOS DE POLLO',
+                description: 'AREPA CON QUESO MOZARELLA, ENSALADA DULCE, TOCINETA, MAICITOS, PAPAS A LA FRANCESA Y GASEOSA',
+                price: 18000,
+                image: 'img/CHUZO DE POLLO 2.jpeg'
+            },
+            {
+                id: 2,
+                name: 'Pincho Montañero',
+                originalName: 'CHUZOS DE CERDO',
+                description: 'AREPA CON QUESO MOZARELLA, ENSALADA DULCE, TOCINETA, MAICITOS, PAPAS A LA FRANCESA Y GASEOSA',
+                price: 18000,
+                image: 'img/CHUZO DE CERDO 3.jpeg'
+            },
+            {
+                id: 3,
+                name: 'Arroz Paisa Dúo',
+                originalName: 'ARROZ PAISA (2 PERSONAS)',
+                description: '#1 PROMOCIÓN: ARROZ PAISA 600 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
+                price: 25000,
+                image: 'img/deliciosos arroz paisa.jpg'
+            },
+            {
+                id: 4,
+                name: 'Arroz Paisa Familiar',
+                originalName: 'ARROZ PAISA (4 PERSONAS)',
+                description: 'PROMOCIÓN: ARROZ PAISA 1200 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
+                price: 45000,
+                image: 'img/deliciosos arroz paisa.jpg'
+            },
+            {
+                id: 5,
+                name: 'Alitas Tricolor Solo',
+                originalName: 'COMBO ALITAS PICANTES,BBQ,A LA NARANJA (1 PERSONA)',
+                description: '8 ALITAS, PAPAS A LA FRANCESA, ENSALADA DULCE , GASEOSA',
+                price: 18000,
+                image: 'img/alitas .jpg'
+            },
+            {
+                id: 6,
+                name: 'Alitas Tricolor Dúo',
+                originalName: 'COMBO ALITAS PICANTES,BBQ,A LA NARANJA (2 PERSONAS)',
+                description: '16 ALITAS, PAPAS A LA FRANCESA, ENSALADA DULCE , GASEOSA',
+                price: 32000,
+                image: 'img/alitas .jpg'
+            },
+            {
+                id: 7,
+                name: 'Arroz Paisa Personal',
+                originalName: 'ARROZ PAISA',
+                description: '#2 ARROZ PAISA 300 GARMOS PARA 1 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 1 GASEOSAS',
+                price: 15000,
+                image: 'img/deliciosos arroz paisa.jpg'
+            },
+            {
+                id: 8,
+                name: 'Cerdo al Barril',
+                originalName: 'CARNE DE CERDO ESPECIAL ASADO AL BARRIL',
+                description: '300 GRAMOS DE CERDO ESPECIAL ASADO AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS',
+                price: 18000,
+                image: 'img/cerdo azado.jpg'
+            },
+            {
+                id: 9,
+                name: 'Res al Barril',
+                originalName: 'CARNE DE RES ASADA AL BARRIL',
+                description: '300 GRAMOS DE RES ESPECIAL ASADA AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS',
+                price: 21000,
+                image: 'img/cerdo azado.jpg'
+            },
+            {
+                id: 10,
+                name: 'Chicharrón Crujiente',
+                originalName: 'CHICHARRON ASADO AL BARRIL',
+                description: 'CHICHARRON ASADO AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS',
+                price: 18000,
+                image: 'img/chicharron azado.jpg'
+            },
+            {
+                id: 11,
+                name: 'Chorizo Oriental',
+                originalName: 'CHORIZO ASADO AL BARRIL',
+                description: 'CHORIZO DEL ORIENTE ASADO AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS',
+                price: 18000,
+                image: 'img/chorizo azado.jpg'
+            },
+            {
+                id: 12,
+                name: 'Picada Dúo',
+                originalName: 'PICADA DEL BARRIL(2 PERSONAS)',
+                description: 'PICADA AL BARRIL 6 PROTEINAS CERDO,CHORIZO,POLLO,CHICHARRON COSTILLA, MORCILLA,PAPA COCIDA SALSAS CHIMICURRI Y HOGADO PATACON,2 GASEOSAS',
+                price: 25000,
+                image: 'img/picada .jpg'
+            },
+            {
+                id: 13,
+                name: 'Picada Familiar',
+                originalName: 'PICADA DEL BARRIL FAMILIAR(4 PERSONAS)',
+                description: 'PICADA AL BARRIL 6 PROTEINAS CERDO,CHORIZO,POLLO,CHICHARRON COSTILLA, MORCILLA,PAPA COCIDA SALSAS CHIMICURRI Y HOGADO PATACON,4 GASEOSAS',
+                price: 45000,
+                image: 'img/picada familiar.jpg'
+            },
+            {
+                id: 14,
+                name: 'Patacón Desmechado',
+                originalName: 'PATACÓN CON CARNE DE SOBREBARRIGA DESMECHADA',
+                description: 'GUACAMOLE, HOGAO, QUESO MOZARELLA Y GASEOSA',
+                price: 15000,
+                image: 'img/patacon final.png'
+            },
+            {
+                id: 15,
+                name: 'Tamal Tricarnes',
+                originalName: 'TAMALES DE MASA',
+                description: '3 CARNES: CHICHARRÓN, CARNE DE CERDO, COSTILLA DE CERDO PORCION DE AGUACATE MÁS GASEOSA',
+                price: 18000,
+                image: 'img/tamal con gaseosa.jpg'
+            },
+            {
+                id: 16,
+                name: 'Fiambre Completo',
+                originalName: 'FIAMBRES',
+                description: 'CHICHARRÓN, CARNE MOLIDA,CHORIZO, HUEVO COCIDO, PURÉ DE PAPA,TAJADA DE MADURO AGUCATE MÁS GASEOSA',
+                price: 18000,
+                image: 'img/fiambre 19.jpg'
+            },
+            {
+                id: 17,
+                name: 'Video: Tamales Desbordados',
+                originalName: 'Video: NUESTROS TAMALES SE LES SALE LA CARNE',
+                description: 'Mira cómo preparamos nuestros deliciosos tamales',
+                video: 'videos/tamal desbordado.mp4'
+            },
+            {
+                id: 18,
+                name: 'Video: Arroz Paisa en Acción',
+                originalName: 'Video: NUESTRO ARROZ PAISA',
+                description: 'Conoce nuestra cocina y nuestro proceso',
+                video: 'videos/arroz paisa video.mp4'
+            }
+        ];
+
+        function renderProducts() {
+            const container = document.getElementById('productContainer');
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+
+                let mediaContent = '';
+                if (product.image) {
+                    mediaContent = \`
+                        <img 
+                            src="\${product.image}" 
+                            alt="\${product.name}"
+                            class="product-image"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Imagen+no+disponible'"
+                        >
+                    \`;
+                } else if (product.video) {
+                    mediaContent = \`
+                        <video class="product-image" controls>
+                            <source src="\${product.video}" type="video/mp4">
+                            Tu navegador no soporta el tag de video.
+                        </video>
+                    \`;
+                }
+
+                card.innerHTML = \`
+                    \${mediaContent}
+                    <div class="product-info">
+                        <h2 class="product-title">\${product.id}. \${product.name}</h2>
+                        <p class="product-description"><strong>Nombre original:</strong> \${product.originalName}</p>
+                        <p class="product-description">\${product.description}</p>
+                        <p class="product-price">$\${product.price.toLocaleString()}</p>
+                        \${product.image ? '<button  class="order-button">Hacer Pedido</button>' : ''}
+                    </div>
+                \`;
+
+                container.appendChild(card);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderProducts);
+    </script>
+</body>
+</html>
+`;
+
+// Write the HTML to a file
+fs.writeFile('menu-with-message.html', html, (err) => {
+    if (err) {
+        console.error('Error writing file:', err);
+    } else {
+        console.log('HTML file has been created successfully.');
+        console.log('Open menu-with-message.html in a web browser to see the result.');
+    }
+});
