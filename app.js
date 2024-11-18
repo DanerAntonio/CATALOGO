@@ -13,6 +13,12 @@ const products = [
         image: 'img/CHUZO DE CERDO 3.jpeg'
     },
     {
+        name: 'TILAPIA FRITA',
+        description: 'ARROZ DE COCO O BLANCO, PATACON,ENSALADA , COMSOME DE BAGRE,  GUARAPO',
+        price: 25000,
+        image: 'img/TILAPIA.jpeg'
+    },
+    {
         name: 'MONDONGO',
         description: ' MONDONGO,COSTILLA DE CERDO AHUMADA, PERNIL DE CERDO,SECO , BANANO , ENSALADA,GUARAPO O CLARO',
         price: 20000,
@@ -27,7 +33,7 @@ const products = [
     {
         name: 'BANDEJA PAISA',
         description: ' CARNE A LA PLANCHA,CHORIZO, CHICHARRN,FRIJOL,HUEVO,TAJADA DE MADURO,AGUACATE,SECO , ENSALADA,GUARAPO O CLARO',
-        price: 20000,
+        price: 25000,
        image: 'img/bandeja paisa.jpg'
     },
 
@@ -35,13 +41,13 @@ const products = [
         name: 'ARROZ PAISA (2 PERSONAS)',
         description: '#1 PROMOCIÓN: ARROZ PAISA 600 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
         price: 25000,
-        image: 'img/deliciosos arroz paisa.jpg'
+        image: 'img/arroz1.jpeg'
     },
     {
         name: 'ARROZ PAISA (4 PERSONAS)',
         description: ' PROMOCIÓN: ARROZ PAISA 1200 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
         price: 45000,
-        image: 'img/deliciosos arroz paisa.jpg'
+        image: 'img/arroz1.jpeg'
     },
     {
         name: 'COMBO ALITAS PICANTES,BBQ,A LA NARANJA (1 PERSONA) ',
@@ -59,7 +65,7 @@ const products = [
         name: 'ARROZ PAISA ',
         description: '#2 ARROZ PAISA 300 GARMOS PARA 1 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 1 GASEOSAS',
         price: 15000,
-        image: 'img/deliciosos arroz paisa.jpg'
+        image: 'img/arroz1.jpeg'
     },
     {
         name: 'CARNE DE CERDO ESPECIAL ASADO AL BARRIL ',
