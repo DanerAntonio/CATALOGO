@@ -111,7 +111,7 @@ const products = [
     },
     {
         name: 'PATACÓN CON CARNE DE SOBREBARRIGA DESMECHADA',
-        description: 'GUACAMOLE, HOGAO, QUESO MOZARELLA Y GASEOSA',
+        description: 'PATACON DE MADURO O VERDE,GUACAMOLE, HOGAO, QUESO MOZARELLA Y GASEOSA',
         price: 15000,
         image: 'img/patacon final.png'
     },
