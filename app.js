@@ -92,6 +92,12 @@ const products = [
         image: 'img/chorizo asado1.jpeg'
     },
     {
+        name: 'SANCOCHO DE GALLINA CRIOLLA ',
+        description: 'SANCOCHO DE GALLINA CRIOLLA ,SECO ,ENSALADA ,AGUACATE, BANANO, SALSAS CHIMICURRI Y HOGADO , GUARAPO O GASEOSA',
+        price: 30000,
+        image: 'img/gallina1.gif' 
+    },
+    {
         name: 'PICADA DEL BARRIL(2 PERSONAS)',
         description:'PICADA AL BARRIL 6 PROTEINAS CERDO,CHORIZO,POLLO,CHICHARRON COSTILLA, MORCILLA,PAPA COCIDA SALSAS CHIMICURRI Y HOGADO PATACON,2 GASEOSAS',
         price: 25000,
