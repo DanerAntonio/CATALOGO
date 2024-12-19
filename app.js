@@ -64,19 +64,19 @@ const products = [
     {
         name: 'ARROZ PAISA ',
         description: '#2 ARROZ PAISA 300 GARMOS PARA 1 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 1 GASEOSAS',
-        price: 15000,
+        price: 16000,
         image: 'img/arroz1.jpeg'
     },
     {
         name: 'POSTA SUDADA ',
         description: ' ARROZ , ENSALADA,FRIJOL O SOPA,TAJADA DE MADURO GUARAPO,GASESOSA,O CLARO, AGUACATE  ',
-        price: 20000,
+        price:16000,
         image: 'img/POSTA4.jpg'
     },
     {
         name: 'HIGADO ENCEBOLLADO',
         description: ' ARROZ,ENSALADA,FRIJOL O SOPA,AGUACTE,TAJADA DE MADURO ,GUARAPO ,GASEOSA O CLARO',
-        price: 20000,
+        price: 16000,
         image: 'img/HIGADO ENCEBOLLADO1.jpg'
     },
 
@@ -107,7 +107,7 @@ const products = [
     {
         name: 'SANCOCHO DE GALLINA CRIOLLA ',
         description: 'SANCOCHO DE GALLINA CRIOLLA ,SECO ,ENSALADA ,AGUACATE, BANANO, SALSAS CHIMICURRI Y HOGADO , GUARAPO O GASEOSA',
-        price: 30000,
+        price: 25000,
         image: 'img/gallina1.gif' 
     },
     {
@@ -124,8 +124,20 @@ const products = [
     },
     {
         name: 'PATACÓN CON CARNE DE SOBREBARRIGA DESMECHADA',
-        description: 'PATACON DE MADURO O VERDE,GUACAMOLE, HOGAO, QUESO MOZARELLA Y GASEOSA',
+        description: 'PATACON DE MADURO O VERDE,GUACAMOLE, HOGAO, QUESO MOZARELLA,GASEOSA O GUARAPO',
         price: 15000,
+        image: 'img/patacon final.png'
+    },
+    {
+        name: 'PATACÓN MIXTO (CARNE DE SOBREBARRIGA Y POLLO)',
+        description: 'PATACON DE MADURO O VERDE,GUACAMOLE, HOGAO, QUESO MOZARELLA,GASEOSA O GUARAPO',
+        price: 18000,
+        image: 'img/patacon final.png'
+    },
+    {
+        name: 'PATACÓN CON TODO (CARNE DE SOBREBARRIGA,POLLO, CERDO,SALCHICHA RANCHERA,TOCINETA',
+        description: 'PATACON DE MADURO O VERDE,GUACAMOLE, HOGAO, QUESO MOZARELLA, GASEOSA O GUARAPO',
+        price: 20000,
         image: 'img/patacon final.png'
     },
     {
