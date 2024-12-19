@@ -68,6 +68,19 @@ const products = [
         image: 'img/arroz1.jpeg'
     },
     {
+        name: 'POSTA SUDADA ',
+        description: ' ARROZ , ENSALADA,FRIJOL O SOPA,TAJADA DE MADURO GUARAPO,GASESOSA,O CLARO, AGUACATE  ',
+        price: 20000,
+        image: 'img/POSTA4.jpg'
+    },
+    {
+        name: 'HIGADO ENCEBOLLADO',
+        description: ' ARROZ,ENSALADA,FRIJOL O SOPA,AGUACTE,TAJADA DE MADURO ,GUARAPO ,GASEOSA O CLARO',
+        price: 20000,
+        image: 'img/HIGADO ENCEBOLLADO1.jpg'
+    },
+
+    {
         name: 'CARNE DE CERDO ESPECIAL ASADO AL BARRIL ',
         description: '300 GRAMOS DE CERDO ESPECIAL ASADO AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS',
         price: 18000,
