@@ -105,6 +105,7 @@ const products = [
         price: 24300, // Precio original: 18000
         image: 'img/tamal con gaseosa.jpg'
     },
+    
     {
         id: 16,
         name: 'FIAMBRES',

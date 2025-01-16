@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Cocina de Claudia</title>
+    <link rel="stylesheet" href="otraprueva.css">
+    <link rel="shortcut icon" href="favicon.ico" type="img/logo la cocina de claudia .jpg">
+</head>
+<body>
+    <header class="header">
+        <img src="img/logo la cocina de claudia .jpg" alt="Logo de La Cocina de Claudia" onerror="this.onerror=null; this.src='ruta-alternativa/logo-backup.png';">
+        <h1>Platos de Claudia</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#" class="nav-button active">Inicio</a></li>
+                <li><a href="saludybelleza.html" class="nav-button">Salud y Belleza</a></li>
+                <li><a href="tortas.html" class="nav-button">Tortas de Cumpleaños</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="content">
+            <div class="product-grid" id="productContainer">
+                <!-- Los productos se generarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <div id="cartContainer">
+        <h2>Carrito de Compras</h2>
+        <div id="cartItems"></div>
+        <div id="cartTotal">Total: $0</div>
+    </div>
+    
+
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Personaliza tu pedido</h2>
+            <form id="orderForm">
+                <!-- Campos existentes -->
+                
+                <!-- Nuevo campo para seleccionar múltiples platos -->
+                <div class="form-group">
+                    <label for="additionalDishes">Platos adicionales:</label>
+                    <select id="additionalDishes" name="additionalDishes" multiple>
+                        <!-- Opciones se llenarán dinámicamente con JavaScript -->
+                    </select>
+                </div>
+
+                <!-- Actualización del campo de bebidas -->
+                <div class="form-group">
+                    <label for="beverage">Selecciona el sabor de tu bebida:</label>
+                    <select id="beverage" name="beverage" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="Manzana">Manzana</option>
+                        <option value="Naranjada">Naranjada</option>
+                        <option value="Guarapo">Guarapo</option>
+                    </select>
+                </div>
+
+                <!-- Actualización del campo de método de pago -->
+                <div class="form-group">
+                    <label for="payment">Método de pago:</label>
+                    <select id="payment" name="payment" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="efectivo">Efectivo</option>
+                        <option value="transferencia">Transferencia</option>
+                    </select>
+                </div>
+
+                <!-- Nuevo campo para tipo de cuenta (visible solo si se selecciona transferencia) -->
+                <div id="accountTypeGroup" class="form-group" style="display: none;">
+                    <label for="accountType">Tipo de cuenta:</label>
+                    <select id="accountType" name="accountType">
+                        <option value="">Seleccione una opción</option>
+                        <option value="ahorros">Cuenta de ahorros</option>
+                        <option value="nequi">Nequi</option>
+                    </select>
+                </div>
+
+                <!-- Campos existentes -->
+
+                <button type="submit">Hacer Pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2024 Platos de Claudia - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="appotraprueba.js"></script>
+</body>
+</html>
+

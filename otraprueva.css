@@ -1,0 +1,381 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    font-size: 18px;
+  }
+  
+  .header {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .header img {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .header h1 {
+    font-size: 2.8em;
+    margin: 0;
+    color: #4CAF50;
+  }
+  
+  .main-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-button {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 0 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1.2em;
+  }
+  
+  .nav-button:hover,
+  .nav-button.active {
+    background-color: #45a049;
+  }
+  
+  .main-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .content {
+    width: 100%;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .product-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .product-card h3 {
+    font-size: 1.6em;
+    margin: 0 0 10px 0;
+    color: #333;
+  }
+  
+  .product-card p {
+    font-size: 1.1em;
+    margin: 0 0 15px 0;
+    flex-grow: 1;
+    color: #666;
+  }
+  
+  .price {
+    font-weight: bold;
+    font-size: 1.4em;
+    color: #4CAF50;
+    margin-bottom: 15px;
+  }
+  
+  .order-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.3em;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+  }
+  
+  .order-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: white;
+    
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  @media (max-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+  
+    .header h1 {
+        font-size: 2.2em;
+    }
+  
+    .nav-button {
+        padding: 8px 16px;
+        font-size: 1em;
+    }
+  }
+  
+  /* Estilos generales */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f8f8;
+  }
+  
+  .header img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  .header h1 {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+  
+  .main-nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .main-nav li {
+    margin: 0.5rem;
+  }
+  
+  .nav-button {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .main-container {
+    padding: 1rem;
+  }
+  
+  /* Media queries para dispositivos móviles */
+  @media screen and (max-width: 768px) {
+    .header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  
+    .header img {
+      max-width: 60px;
+      order: 1;
+    }
+  
+    .header h1 {
+      font-size: 1.2rem;
+      order: 2;
+      flex: 1;
+      text-align: left;
+      margin-left: 1rem;
+    }
+  
+    .main-nav {
+      width: 100%;
+      order: 3;
+    }
+  
+    .main-nav ul {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .main-nav li {
+      margin: 0.25rem 0;
+    }
+  
+    .nav-button {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  /* ... (estilos existentes) ... */
+
+#additionalDishes {
+    height: 100px;
+    overflow-y: auto;
+}
+
+#accountTypeGroup {
+    margin-top: 10px;
+}
+
+/* Mejora la apariencia en dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 5% auto;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    select, input[type="text"], input[type="number"] {
+        font-size: 16px; /* Previene el zoom en iOS */
+    }
+}
+
+/* ... (resto de los estilos existentes) ... */
+

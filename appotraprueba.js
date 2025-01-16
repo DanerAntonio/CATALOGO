@@ -21,13 +21,13 @@ const products = [
     {
         name: 'MONDONGO',
         description: ' MONDONGO,COSTILLA DE CERDO AHUMADA, PERNIL DE CERDO,SECO , BANANO , ENSALADA,GUARAPO O CLARO',
-        price: 25000,
+        price: 20000,
         image: 'img/MONDONGOO.jpeg'
     },
     {
         name: 'SANCOCHO TRIFASICO ANTIOQUEÑO',
         description: ' CARNE DE SOBREBARRIGA,COSTILLA DE CERDO AHUMADA, POLLO,SECO , AGUCATE, ENSALADA,GUARAPO O CLARO',
-        price: 25000,
+        price: 20000,
         image: 'img/TRIFASICO 1.jpeg'
     },
     {
@@ -64,26 +64,26 @@ const products = [
     {
         name: 'ARROZ PAISA ',
         description: '#2 ARROZ PAISA 300 GARMOS PARA 1 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 1 GASEOSAS',
-        price: 18000,
+        price: 16000,
         image: 'img/arroz1.jpeg'
     },
     {
         name: 'POSTA SUDADA ',
         description: ' ARROZ , ENSALADA,FRIJOL O SOPA,TAJADA DE MADURO GUARAPO,GASESOSA,O CLARO, AGUACATE  ',
-        price:18000,
+        price:16000,
         image: 'img/POSTA4.jpg'
     },
     {
         name: 'HIGADO ENCEBOLLADO',
         description: ' ARROZ,ENSALADA,FRIJOL O SOPA,AGUACTE,TAJADA DE MADURO ,GUARAPO ,GASEOSA O CLARO',
-        price: 18000,
+        price: 16000,
         image: 'img/HIGADO ENCEBOLLADO1.jpg'
     },
 
     {
         name: 'CARNE DE CERDO ESPECIAL ASADO AL BARRIL ',
         description: '300 GRAMOS DE CERDO ESPECIAL ASADO AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS',
-        price: 20000,
+        price: 18000,
         image: 'img/CARNE ASADA 2.jpeg'
     },
     {
@@ -95,7 +95,7 @@ const products = [
     {
         name: 'CHICHARRON ASADO AL BARRIL',
         description: 'CHICHARRON  ASADO AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS',
-        price: 20000,
+        price: 18000,
         image: 'img/chicharron azado.jpg'
     },
     {
@@ -125,7 +125,7 @@ const products = [
     {
         name: 'PATACÓN CON CARNE DE SOBREBARRIGA DESMECHADA',
         description: 'PATACON DE MADURO O VERDE,GUACAMOLE, HOGAO, QUESO MOZARELLA,GASEOSA O GUARAPO',
-        price: 18000,
+        price: 15000,
         image: 'img/patacon final.png'
     },
     {
@@ -143,26 +143,14 @@ const products = [
     {
         name: 'TAMALES DE MASA ',
         description: '3 CARNES: CHICHARRÓN, CARNE DE CERDO, COSTILLA  DE CERDO PORCION DE AGUACATE MÁS GASEOSA',
-        price: 20000,
+        price: 18000,
         image: 'img/tamal con gaseosa.jpg'
     },
     {
         name: 'FIAMBRES',
         description: 'CHICHARRÓN, CARNE MOLIDA,CHORIZO, HUEVO COCIDO, PURÉ DE PAPA,TAJADA DE MADURO AGUCATE MÁS GASEOSA',
-        price: 20000,
+        price: 18000,
         image: 'img/fiambre 19.jpg'
-    },
-    {
-        name: 'SUDADO DE POLLO',
-        description: 'ARROZ, FRIJOL,ENSALADA, TAJADA DE MADURO, AGUCATE,BANANO,GUARAPO,SOPA DEL DIA',
-        price: 20000,
-        image: 'img/sudado de pollo.jpeg'
-    },
-    {
-        name: 'PECHUGA A LA PLANCHA',
-        description: 'ARROZ, FRIJOL,ENSALADA, TAJADA DE MADURO, PAPITAS A ALA FRANCESA,AGUCATE,BANANO,GUARAPO,SOPA DEL DIA',
-        price: 20000,
-        image: 'img/pechuga a la plancha.jpeg'
     },
     {
         name: 'Video: NUESTROS TAMALES SE LES SALE LA CARNE',
@@ -175,171 +163,102 @@ const products = [
         video: 'videos/arroz paisa video.mp4'
     }
 ];
-
 let selectedProduct = null;
+let cart = []; // Array para gestionar los productos del carrito
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const productContainer = document.getElementById('productContainer');
-    const modal = document.getElementById('orderModal');
-    const closeBtn = document.getElementsByClassName('close')[0];
-    const orderForm = document.getElementById('orderForm');
-    const wingFlavorsDiv = document.getElementById('wingFlavors');
-    const picadaOptionsDiv = document.getElementById('picadaOptions');
+    const cartContainer = document.getElementById('cartContainer');
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
 
     function renderProducts() {
         productContainer.innerHTML = '';
         products.forEach(product => {
             const productCard = document.createElement('div');
             productCard.className = 'product-card';
+
             if (product.image) {
                 productCard.innerHTML = `
                     <img class="product-image" src="${product.image}" alt="${product.name}">
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
                     <span class="price">$${product.price.toLocaleString()}</span>
-                    <button class="order-btn" data-product="${product.name}">Hacer Pedido</button>
+                    <button class="order-btn" data-product="${product.name}">Agregar al Carrito</button>
                 `;
             } else if (product.video) {
                 productCard.innerHTML = `
-                    <video class="product-image" controls>
+                    <video class="product-video" controls>
                         <source src="${product.video}" type="video/mp4">
-                        Tu navegador no soporta el tag de video.
+                        Tu navegador no soporta videos.
                     </video>
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
                 `;
             }
+
             productContainer.appendChild(productCard);
+        });
+
+        // Agregar evento a los botones de agregar al carrito
+        const addToCartButtons = document.querySelectorAll('.order-btn');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', addToCart);
         });
     }
 
-    function openModal(productName) {
-        selectedProduct = products.find(p => p.name === productName);
-        modal.style.display = 'block';
-        orderForm.reset();
+    function addToCart(event) {
+        const productName = event.target.getAttribute('data-product');
+        const product = products.find(p => p.name === productName);
 
-        wingFlavorsDiv.style.display = productName === 'COMBO ALITAS PICANTES,BBQ,A LA NARANJA ' ? 'block' : 'none';
-        picadaOptionsDiv.style.display = productName === 'PICADA DEL BARRIL' ? 'block' : 'none';
-    }
-
-    function closeModal() {
-        modal.style.display = 'none';
-    }
-
-    function toggleAddressFields() {
-        const residenceSelect = document.getElementById('residence');
-        const customAddressGroup = document.getElementById('customAddressGroup');
-        const towerGroup = document.getElementById('towerGroup');
-        const apartmentGroup = document.getElementById('apartmentGroup');
-
-        if (residenceSelect.value === 'other') {
-            customAddressGroup.style.display = 'block';
-            towerGroup.style.display = 'none';
-            apartmentGroup.style.display = 'none';
-        } else {
-            customAddressGroup.style.display = 'none';
-            towerGroup.style.display = 'block';
-            apartmentGroup.style.display = 'block';
+        if (product) {
+            const existingProduct = cart.find(p => p.name === product.name);
+            if (existingProduct) {
+                existingProduct.quantity++;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            renderCart();
         }
     }
 
-    function sendWhatsAppOrder(orderDetails, totalWithTip) {
-        let message = 'Pedido de La Cocina de Claudia:\n\n';
-        message += `Producto: ${selectedProduct.name}\n`;
-        message += `Cantidad: ${orderDetails.quantity}\n`;
-        message += `Precio unitario: $${selectedProduct.price.toLocaleString()}\n`;
+    function renderCart() {
+        cartItems.innerHTML = '';
+        let total = 0;
 
-        if (selectedProduct.name === 'COMBO ALITAS PICANTES,BBQ,A LA NARANJA ') {
-            const wingFlavors = orderDetails.wingFlavors ? (Array.isArray(orderDetails.wingFlavors) ? orderDetails.wingFlavors.join(', ') : orderDetails.wingFlavors) : 'No seleccionado';
-            message += `Sabores de alitas: ${wingFlavors}\n`;
+        cart.forEach(item => {
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+            cartItem.innerHTML = `
+                <span>${item.name} (${item.quantity})</span>
+                <span>$${(item.price * item.quantity).toLocaleString()}</span>
+                <button class="remove-btn" data-product="${item.name}">Eliminar</button>
+            `;
+            total += item.price * item.quantity;
+            cartItems.appendChild(cartItem);
+        });
+
+        cartTotal.textContent = `Total: $${total.toLocaleString()}`;
+
+        // Agregar evento a los botones de eliminar
+        const removeButtons = document.querySelectorAll('.remove-btn');
+        removeButtons.forEach(button => {
+            button.addEventListener('click', removeFromCart);
+        });
+    }
+
+    function removeFromCart(event) {
+        const productName = event.target.getAttribute('data-product');
+        const productIndex = cart.findIndex(p => p.name === productName);
+
+        if (productIndex > -1) {
+            cart[productIndex].quantity--;
+            if (cart[productIndex].quantity === 0) {
+                cart.splice(productIndex, 1);
+            }
+            renderCart();
         }
-
-        if (selectedProduct.name === 'PICADA DEL BARRIL') {
-            const picadaOptions = orderDetails.picadaOptions ? (Array.isArray(orderDetails.picadaOptions) ? orderDetails.picadaOptions.join(', ') : orderDetails.picadaOptions) : 'No seleccionado';
-            const picadaDouble = orderDetails.picadaDouble ? (Array.isArray(orderDetails.picadaDouble) ? orderDetails.picadaDouble.join(', ') : orderDetails.picadaDouble) : 'Ninguno';
-            message += `Opciones de picada: ${picadaOptions}\n`;
-            message += `Opciones dobles: ${picadaDouble}\n`;
-        }
-
-        message += `Bebida: ${orderDetails.beverage}\n`;
-
-        const sauces = orderDetails.sauces ? (Array.isArray(orderDetails.sauces) ? orderDetails.sauces.join(', ') : orderDetails.sauces) : 'Ninguna';
-        message += `Salsas: ${sauces}\n`;
-        message += `Echar salsas en el pedido: ${orderDetails.addSauce ? 'Sí' : 'No'}\n`;
-
-        message += `Método de pago: ${orderDetails.payment}\n`;
-
-        if (orderDetails.residence === 'other') {
-            message += `Dirección: ${orderDetails.customAddress}\n`;
-        } else {
-            message += `Residencia: ${orderDetails.residence}\n`;
-            message += `Torre: ${orderDetails.tower}\n`;
-            message += `Apartamento: ${orderDetails.apartment}\n`;
-        }
-
-        message += `Propina: $${parseFloat(orderDetails.tip || 0).toLocaleString()}\n`;
-        message += `Total (incluyendo propina): $${totalWithTip.toLocaleString()}\n`;
-        message += `Nombre: ${orderDetails.name}\n`;
-
-        const phoneNumber = '3112762618';
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
     }
 
     renderProducts();
-
-    productContainer.addEventListener('click', function(e) {
-        if (e.target.classList.contains('order-btn')) {
-            const productName = e.target.getAttribute('data-product');
-            openModal(productName);
-        }
-    });
-
-    closeBtn.addEventListener('click', closeModal);
-
-    window.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-
-    orderForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const orderDetails = Object.fromEntries(formData);
-
-        const quantity = parseInt(orderDetails.quantity);
-        const productPrice = selectedProduct.price;
-        const total = productPrice * quantity;
-        const tip = parseFloat(orderDetails.tip) || 0;
-        const totalWithTip = total + tip;
-
-        sendWhatsAppOrder(orderDetails, totalWithTip);
-        closeModal();
-    });
-
-    document.getElementById('residence').addEventListener('change', toggleAddressFields);
-
-    const wingFlavorCheckboxes = document.querySelectorAll('input[name="wingFlavors"]');
-    wingFlavorCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-            const checkedFlavors = document.querySelectorAll('input[name="wingFlavors"]:checked');
-            if (checkedFlavors.length > 2) {
-                this.checked = false;
-            }
-        });
-    });
-
-    const picadaOptions = document.querySelectorAll('input[name="picadaOptions"], input[name="picadaDouble"]');
-    picadaOptions.forEach(option => {
-        option.addEventListener('change', function() {
-            const checkedOptions = document.querySelectorAll('input[name="picadaOptions"]:checked, input[name="picadaDouble"]:checked');
-            if (checkedOptions.length > 6) {
-                this.checked = false;
-            }
-        });
-    });
-
-    // Hacer la función toggleAddressFields accesible globalmente
-    window.toggleAddressFields = toggleAddressFields;
 });
