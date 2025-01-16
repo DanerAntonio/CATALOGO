@@ -162,7 +162,7 @@ const products = [
         name: 'PECHUGA A LA PLANCHA',
         description: 'ARROZ, FRIJOL,ENSALADA, TAJADA DE MADURO, PAPITAS A ALA FRANCESA,AGUCATE,BANANO,GUARAPO,SOPA DEL DIA',
         price: 20000,
-        image: 'img/pechuga a la plancha.jpeg'
+        image: 'img/pechuga a la placha.jpeg'
     },
     {
         name: 'Video: NUESTROS TAMALES SE LES SALE LA CARNE',
