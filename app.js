@@ -113,13 +113,13 @@ const products = [
     {
         name: 'PICADA DEL BARRIL(2 PERSONAS)',
         description:'PICADA AL BARRIL 6 PROTEINAS CERDO,CHORIZO,POLLO,CHICHARRON COSTILLA, MORCILLA,PAPA COCIDA SALSAS CHIMICURRI Y HOGADO PATACON,2 GASEOSAS',
-        price: 25000,
+        price: 30000,
         image: 'img/picada .jpg'
     },
     {
         name: 'PICADA DEL BARRIL FAMILIAR(4 PERSONAS)',
         description:'PICADA AL BARRIL 6 PROTEINAS CERDO,CHORIZO,POLLO,CHICHARRON COSTILLA, MORCILLA,PAPA COCIDA SALSAS CHIMICURRI Y HOGADO PATACON,4 GASEOSAS',
-        price: 45000,
+        price: 50000,
         image: 'img/picada familiar.jpg'
     },
     {
@@ -156,13 +156,13 @@ const products = [
         name: 'SUDADO DE POLLO',
         description: 'ARROZ, FRIJOL,ENSALADA, TAJADA DE MADURO, AGUCATE,BANANO,GUARAPO,SOPA DEL DIA',
         price: 20000,
-        image: 'img/sudado de pollo.jpeg'
+        image: 'img/pollo sudado.jpeg'
     },
     {
         name: 'PECHUGA A LA PLANCHA',
         description: 'ARROZ, FRIJOL,ENSALADA, TAJADA DE MADURO, PAPITAS A ALA FRANCESA,AGUCATE,BANANO,GUARAPO,SOPA DEL DIA',
         price: 20000,
-        image: 'img/pechuga a la placha.jpeg'
+        image: 'img/pechuga con papas.jpeg'
     },
     {
         name: 'Video: NUESTROS TAMALES SE LES SALE LA CARNE',
