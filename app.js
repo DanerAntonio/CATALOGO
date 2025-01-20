@@ -40,13 +40,13 @@ const products = [
     {
         name: 'ARROZ PAISA (2 PERSONAS)',
         description: '#1 PROMOCIÓN: ARROZ PAISA 600 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
-        price: 25000,
+        price: 30000,
         image: 'img/arroz1.jpeg'
     },
     {
         name: 'ARROZ PAISA (4 PERSONAS)',
         description: ' PROMOCIÓN: ARROZ PAISA 1200 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
-        price: 45000,
+        price: 50000,
         image: 'img/arroz1.jpeg'
     },
     {
