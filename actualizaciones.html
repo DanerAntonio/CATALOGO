@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volante Restaurante</title>
+    <style>
+        /* Estilos generales */
+        body { margin: 0; padding: 0; font-family: 'Arial', sans-serif; }
+        .flyer { 
+            width: 150mm; /* 15 cm */
+            height: 100mm; /* 10 cm */ 
+            background: white; 
+            display: flex; 
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .front, .back { padding: 5mm; box-sizing: border-box; }
+        
+        /* Cara 1: Imágenes */
+        .front {
+            background: linear-gradient(135deg, #e74c3c, #f39c12);
+            color: white;
+            text-align: center;
+        }
+        .logo {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .slogan {
+            font-size: 10px;
+            margin-bottom: 8px;
+        }
+        .grid-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+            margin-top: 5px;
+        }
+        .plate-img {
+            width: 100%;
+            height: 40px;
+            object-fit: cover;
+            border: 2px solid white;
+            border-radius: 5px;
+        }
+        
+        /* Cara 2: Lista de platos */
+        .back {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3mm;
+            font-size: 7px;
+        }
+        .plate-item {
+            margin-bottom: 3px;
+            break-inside: avoid;
+        }
+        .plate-name {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .contact {
+            grid-column: span 2;
+            text-align: center;
+            font-size: 8px;
+            margin-top: 5px;
+            border-top: 1px dashed #ccc;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cara 1: Imágenes -->
+    <div class="flyer">
+        <div class="front">
+            <div class="logo">RESTAURANTE DEL BARRIL</div>
+            <div class="slogan">Sabores tradicionales con auténtico sabor</div>
+            <div class="grid-images">
+                <img class="plate-img" src="img/bandeja paisa.jpg" alt="Bandeja Paisa">
+                <img class="plate-img" src="img/picada familiar.jpg" alt="Picada Familiar">
+                <img class="plate-img" src="img/TILAPIA.jpeg" alt="Tilapia Frita">
+                <img class="plate-img" src="img/CHUZO DE POLLO 2.jpeg" alt="Chuzos de Pollo">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cara 2: Lista de platos -->
+    <div class="flyer" style="margin-top: 2mm;">
+        <div class="back">
+            <!-- Columna 1 -->
+            <div>
+                <div class="plate-item">
+                    <div class="plate-name">CHUZOS DE POLLO</div>
+                    <div>Arepa con queso mozzarella, ensalada dulce, tocineta, maicitos, papas francesas y gaseosa.</div>
+                </div>
+                <div class="plate-item">
+                    <div class="plate-name">TILAPIA FRITA</div>
+                    <div>Arroz de coco o blanco, patacón, ensalada, comsome de bagre, guarapo.</div>
+                </div>
+                <div class="plate-item">
+                    <div class="plate-name">BANDEJA PAISA</div>
+                    <div>Carne, chorizo, chicharrón, frijol, huevo, tajada de maduro, aguacate, seco, ensalada.</div>
+                </div>
+                <div class="plate-item">
+                    <div class="plate-name">PICADA FAMILIAR</div>
+                    <div>6 proteínas: cerdo, chorizo, pollo, chicharrón, costilla, morcilla, papa, salsas.</div>
+                </div>
+                <div class="plate-item">
+                    <div class="plate-name">SANCOCHO TRIFÁSICO</div>
+                    <div>Sobrebarriga, costilla ahumada, pollo, seco, aguacate, ensalada, guarapo.</div>
+                </div>
+            </div>
+            
+            <!-- Columna 2 -->
+            <div>
+                <div class="plate-item">
+                    <div class="plate-name">PATACÓN MIXTO</div>
+                    <div>Patacón de maduro o verde, guacamole, hogao, queso mozzarella, gaseosa o guarapo.</div>
+                </div>
+                <div class="plate-item">
+                    <div class="plate-name">ARROZ PAISA</div>
+                    <div>Promoción para 2 personas: arroz, costilla BBQ, papas francesas, 2 gaseosas.</div>
+                </div>
+                <div class="plate-item">
+                    <div class="plate-name">CARNE DE RES ASADA</div>
+                    <div>300g de res asada al barril, salsas chimichurri y hogao, arepa, papa cocida, gaseosa.</div>
+                </div>
+                <div class="plate-item">
+                    <div class="plate-name">TAMALES DE MASA</div>
+                    <div>3 carnes: chicharrón, cerdo, costilla, aguacate, gaseosa.</div>
+                </div>
+            </div>
+            
+            <!-- Contacto -->
+            <div class="contact">
+                <strong>📍 Dirección:</strong> [Tu dirección] · <strong>📞 Teléfono:</strong> [Tu teléfono]<br>
+                <strong>🕒 Horario:</strong> Lunes a Domingo 11am - 8pm · <strong>Instagram:</strong> @TuRestaurante
+            </div>
+        </div>
+    </div>
+</body>
+</html>

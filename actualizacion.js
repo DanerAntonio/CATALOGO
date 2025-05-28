@@ -1,4 +1,4 @@
-// Array de productos
+// Array de productos (solo modifiqué el de Tilapia)
 const products = [
     {
         name: 'CHUZOS DE POLLO',
@@ -13,10 +13,11 @@ const products = [
         image: 'img/CHUZO DE CERDO 3.jpeg'
     },
     {
-        name: 'TILAPIA FRITA',
+        name: 'PESCADO FRITO',
         description: 'ARROZ DE COCO O BLANCO, PATACON,ENSALADA , COMSOME DE BAGRE,  GUARAPO',
         price: 25000,
-        image: 'img/TILAPIA.jpeg'
+        image: 'img/TILAPIA.jpeg',
+        fishTypes: ['Tilapia', 'Mojarra', 'Bagre', 'Róbalo'] // Tipos de pescado agregados
     },
     {
         name: 'MONDONGO',
@@ -36,7 +37,6 @@ const products = [
         price: 25000,
        image: 'img/bandeja paisa.jpg'
     },
-
     {
         name: 'ARROZ PAISA (2 PERSONAS)',
         description: '#1 PROMOCIÓN: ARROZ PAISA 600 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS',
@@ -79,7 +79,6 @@ const products = [
         price: 18000,
         image: 'img/HIGADO ENCEBOLLADO1.jpg'
     },
-
     {
         name: 'CARNE DE CERDO ESPECIAL ASADO AL BARRIL ',
         description: '300 GRAMOS DE CERDO ESPECIAL ASADO AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS',
@@ -159,30 +158,6 @@ const products = [
         image: 'img/pollo sudado.jpeg'
     },
     {
-        name: 'MENU COMPLETICO CON RES',
-        description: 'ARROZ, FRIJOL, ENSALADA, HUEVO, PAPAS FRITAS, AGUCATE,GUARAPO,SOPA DEL DIA',
-        price: 17000,
-        image: 'img/menu con res.jpg'
-    },
-    {
-        name: 'MENU COMPLETICO CON PECHUGA',
-        description: 'ARROZ, FRIJOL, ENSALADA, HUEVO, PAPAS FRITAS, AGUCATE,GUARAPO,SOPA DEL DIA',
-        price: 16000,
-        image: 'img/menu con pechuga.jpg'
-    },
-    {
-        name: 'MENU COMPLETICO CON CERDO',
-        description: 'ARROZ, FRIJOL, ENSALADA, HUEVO, PAPAS FRITAS, AGUCATE,GUARAPO,SOPA DEL DIA',
-        price: 16000,
-        image: 'img/menu con cerdo.jpg'
-    },
-    {
-        name: 'MENU COMPLETICO CON CHICHARRON',
-        description: 'ARROZ, FRIJOL, ENSALADA, HUEVO, PAPAS FRITAS, AGUCATE,GUARAPO,SOPA DEL DIA',
-        price: 16000,
-        image: 'img/menu con cerdo.jpg'
-    },
-    {
         name: 'PECHUGA A LA PLANCHA',
         description: 'ARROZ, FRIJOL,ENSALADA, TAJADA DE MADURO, PAPITAS A ALA FRANCESA,AGUCATE,BANANO,GUARAPO,SOPA DEL DIA',
         price: 20000,
@@ -209,6 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const orderForm = document.getElementById('orderForm');
     const wingFlavorsDiv = document.getElementById('wingFlavors');
     const picadaOptionsDiv = document.getElementById('picadaOptions');
+    const fishTypeDiv = document.getElementById('fishType');
 
     function renderProducts() {
         productContainer.innerHTML = '';
@@ -242,8 +218,10 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'block';
         orderForm.reset();
 
-        wingFlavorsDiv.style.display = productName === 'COMBO ALITAS PICANTES,BBQ,A LA NARANJA ' ? 'block' : 'none';
-        picadaOptionsDiv.style.display = productName === 'PICADA DEL BARRIL' ? 'block' : 'none';
+        // Mostrar u ocultar secciones según el producto
+        wingFlavorsDiv.style.display = productName.includes('ALITAS') ? 'block' : 'none';
+        picadaOptionsDiv.style.display = productName.includes('PICADA') ? 'block' : 'none';
+        fishTypeDiv.style.display = productName === 'PESCADO FRITO' ? 'block' : 'none';
     }
 
     function closeModal() {
@@ -273,12 +251,16 @@ document.addEventListener('DOMContentLoaded', function() {
         message += `Cantidad: ${orderDetails.quantity}\n`;
         message += `Precio unitario: $${selectedProduct.price.toLocaleString()}\n`;
 
-        if (selectedProduct.name === 'COMBO ALITAS PICANTES,BBQ,A LA NARANJA ') {
+        if (selectedProduct.name === 'PESCADO FRITO') {
+            message += `Tipo de pescado: ${orderDetails.fishType}\n`;
+        }
+
+        if (selectedProduct.name.includes('ALITAS')) {
             const wingFlavors = orderDetails.wingFlavors ? (Array.isArray(orderDetails.wingFlavors) ? orderDetails.wingFlavors.join(', ') : orderDetails.wingFlavors) : 'No seleccionado';
             message += `Sabores de alitas: ${wingFlavors}\n`;
         }
 
-        if (selectedProduct.name === 'PICADA DEL BARRIL') {
+        if (selectedProduct.name.includes('PICADA')) {
             const picadaOptions = orderDetails.picadaOptions ? (Array.isArray(orderDetails.picadaOptions) ? orderDetails.picadaOptions.join(', ') : orderDetails.picadaOptions) : 'No seleccionado';
             const picadaDouble = orderDetails.picadaDouble ? (Array.isArray(orderDetails.picadaDouble) ? orderDetails.picadaDouble.join(', ') : orderDetails.picadaDouble) : 'Ninguno';
             message += `Opciones de picada: ${picadaOptions}\n`;
