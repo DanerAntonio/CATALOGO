@@ -78,7 +78,7 @@ const products = [
   {
     name: "ARROZ PAISA ",
     description: "#2 ARROZ PAISA 300 GARMOS PARA 1 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 1 GASEOSAS",
-    price: 18000,
+    price: 20000,
     image: "img/arroz1.jpeg",
     type: "fast-food",
   },
