@@ -22,6 +22,21 @@
         </nav>
     </header>
 
+    <!-- Agregado carrito flotante -->
+    <div id="cartFloat" class="cart-float">
+        <div class="cart-header">
+            <h3>Mi Pedido (<span id="cartCount">0</span>)</h3>
+            <button id="toggleCart" class="toggle-cart-btn">▼</button>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0</span></strong>
+            </div>
+            <button id="checkoutBtn" class="checkout-btn">Finalizar Pedido</button>
+        </div>
+    </div>
+
     <div class="main-container">
         <div class="content">
             <div class="product-grid" id="productContainer">
@@ -30,11 +45,13 @@
         </div>
     </div>
 
+    <!-- Modal simplificado para agregar productos al carrito -->
     <div id="orderModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Personaliza tu pedido</h2>
+            <h2 id="modalTitle">Personaliza tu pedido</h2>
             <form id="orderForm">
+                <!-- Opciones específicas por tipo de producto -->
                 <div id="wingFlavors" class="form-group" style="display: none;">
                     <label>Selecciona hasta dos sabores de alitas:</label>
                     <div class="checkbox-group">
@@ -54,7 +71,7 @@
                         <label><input type="checkbox" name="picadaOptions" value="Costilla"> Costilla</label>
                         <label><input type="checkbox" name="picadaOptions" value="Morcilla"> Morcilla</label>
                     </div>
-                    <label>Selecciona las opciones que quieres dobles:</label>
+                    <label style="margin-top: 15px;">Selecciona las opciones que quieres dobles:</label>
                     <div class="checkbox-group">
                         <label><input type="checkbox" name="picadaDouble" value="Cerdo"> Cerdo</label>
                         <label><input type="checkbox" name="picadaDouble" value="Chorizo"> Chorizo</label>
@@ -65,12 +82,11 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="beverage">Selecciona el sabor de tu bebida:</label>
+                <!-- Bebidas dinámicas según tipo de producto -->
+                <div id="beverageGroup" class="form-group">
+                    <label for="beverage">Selecciona tu bebida:</label>
                     <select id="beverage" name="beverage" required>
                         <option value="">Seleccione una opción</option>
-                        <option value="Manzana">Manzana</option>
-                        <option value="Naranjada">Naranjada</option>
                     </select>
                 </div>
 
@@ -94,6 +110,22 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="quantity">Cantidad de Unidades:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                </div>
+
+                <button type="submit" class="add-to-cart-btn">Agregar al Pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de checkout para finalizar el pedido -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-checkout">&times;</span>
+            <h2>Finalizar Pedido</h2>
+            <form id="checkoutForm">
+                <div class="form-group">
                     <label for="payment">Método de pago:</label>
                     <select id="payment" name="payment" required>
                         <option value="">Seleccione una opción</option>
@@ -104,7 +136,7 @@
 
                 <div class="form-group">
                     <label for="residence">Residencia:</label>
-                    <select id="residence" name="residence" required onchange="toggleAddressFields()">
+                    <select id="residence" name="residence" required>
                         <option value="">Seleccione una opción</option>
                         <option value="Curazao">Curazao</option>
                         <option value="Toledo">Toledo</option>
@@ -136,13 +168,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="quantity">Cantidad de Unidades:</label>
-                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
-                </div>
-
-                <div class="form-group">
                     <label for="tip">Propina para el domiciliario (opcional):</label>
-                    <input type="number" id="tip" name="tip" min="0" step="0.01">
+                    <input type="number" id="tip" name="tip" min="0" step="1000" placeholder="0">
                 </div>
 
                 <div class="form-group">
@@ -150,13 +177,27 @@
                     <input type="text" id="name" name="name" required>
                 </div>
 
-                <button type="submit">Hacer Pedido</button>
+                <div class="checkout-summary">
+                    <h3>Resumen del Pedido:</h3>
+                    <div id="checkoutSummary"></div>
+                    <div class="total-line">
+                        <strong>Subtotal: $<span id="checkoutSubtotal">0</span></strong>
+                    </div>
+                    <div class="total-line">
+                        <strong>Propina: $<span id="checkoutTip">0</span></strong>
+                    </div>
+                    <div class="total-line final-total">
+                        <strong>TOTAL: $<span id="checkoutTotal">0</span></strong>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-order-btn">Enviar Pedido por WhatsApp</button>
             </form>
         </div>
     </div>
 
     <footer class="footer">
-        <p>© 2024 Platos de Claudia - Todos los derechos reservados</p>
+        <p>© 2025 Platos de Claudia - Todos los derechos reservados</p>
     </footer>
 
     <script src="app.js"></script>
