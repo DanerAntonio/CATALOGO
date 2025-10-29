@@ -232,6 +232,13 @@ const products = [
     type: "menu",
   },
   {
+    name: "DESGRANADOS QUESUDOS",
+    description: "*nuestros desgranados únicos, preparados con el toque casero que solo **Claudia* sabe dar 💛",
+    price: 20000,
+    image: "img/DESGRANADOS.jpeg",
+    type: "menu",
+  },
+  {
     name: "Video: NUESTROS TAMALES SE LES SALE LA CARNE",
     description: "Mira cómo preparamos nuestros deliciosos tamales",
     video: "videos/tamal desbordado.mp4",
