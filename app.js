@@ -185,7 +185,7 @@ const products = [
   {
     name: "FIAMBRES",
     description: "CHICHARRÓN, CARNE MOLIDA,CHORIZO, HUEVO COCIDO, PURÉ DE PAPA,TAJADA DE MADURO AGUCATE MÁS GASEOSA",
-    price: 20000,
+    price: 22000,
     image: "img/fiambre 19.jpg",
     type: "fast-food",
   },
