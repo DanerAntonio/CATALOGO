@@ -494,11 +494,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const checkoutTip = document.getElementById("checkoutTip")
     const checkoutTotal = document.getElementById("checkoutTotal")
     const checkoutSubtotal = document.getElementById("checkoutSubtotal")
+    const checkoutDelivery = document.getElementById("checkoutDelivery")
+    const residenceSelect = document.getElementById("residence")
 
     const subtotal = Number.parseInt(checkoutSubtotal.textContent.replace(/\./g, ""))
     const tip = Number.parseInt(tipInput.value) || 0
-    const total = subtotal + tip
 
+    let deliveryFee = 0
+    if (residenceSelect.value && residenceSelect.value !== "" && residenceSelect.value !== "Curazao") {
+      deliveryFee = 3000
+    }
+
+    const total = subtotal + deliveryFee + tip
+
+    checkoutDelivery.textContent = deliveryFee.toLocaleString()
     checkoutTip.textContent = tip.toLocaleString()
     checkoutTotal.textContent = total.toLocaleString()
   }
@@ -518,6 +527,8 @@ document.addEventListener("DOMContentLoaded", () => {
       towerGroup.style.display = "block"
       apartmentGroup.style.display = "block"
     }
+
+    updateCheckoutTotal()
   }
 
   function sendWhatsAppOrder(checkoutDetails) {
@@ -570,12 +581,19 @@ document.addEventListener("DOMContentLoaded", () => {
     message += `\n💰 *TOTALES:*\n`
     message += `Subtotal: $${subtotal.toLocaleString()}\n`
 
+    const residenceSelect = document.getElementById("residence")
+    let deliveryFee = 0
+    if (residenceSelect.value && residenceSelect.value !== "" && residenceSelect.value !== "Curazao") {
+      deliveryFee = 3000
+      message += `Domicilio: $${deliveryFee.toLocaleString()}\n`
+    }
+
     const tip = Number.parseInt(checkoutDetails.tip) || 0
     if (tip > 0) {
       message += `Propina: $${tip.toLocaleString()}\n`
     }
 
-    const total = subtotal + tip
+    const total = subtotal + deliveryFee + tip
     message += `*TOTAL: $${total.toLocaleString()}*\n`
 
     message += `\n📍 *DATOS DE ENTREGA:*\n`

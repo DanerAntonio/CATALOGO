@@ -154,6 +154,13 @@
                     </select>
                 </div>
 
+                <div class="form-group" id="curazaoBusinessGroup" style="display: none;">
+                    <label for="curazaoBusiness">
+                        <input type="checkbox" id="curazaoBusiness" name="curazaoBusiness">
+                        ¿Es en la ubicación del emprendimiento? (Sin cargo de domicilio)
+                    </label>
+                </div>
+
                 <div class="form-group" id="customAddressGroup" style="display: none;">
                     <label for="customAddress">Dirección:</label>
                     <input type="text" id="customAddress" name="customAddress">
@@ -184,6 +191,9 @@
                     <div id="checkoutSummary"></div>
                     <div class="total-line">
                         <strong>Subtotal: $<span id="checkoutSubtotal">0</span></strong>
+                    </div>
+                    <div class="total-line">
+                        <strong>Domicilio: $<span id="checkoutDelivery">0</span></strong>
                     </div>
                     <div class="total-line">
                         <strong>Propina: $<span id="checkoutTip">0</span></strong>
