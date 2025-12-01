@@ -3,35 +3,35 @@ const products = [
   {
     name: "CHUZOS DE POLLO",
     description: "AREPA CON QUESO MOZARELLA, ENSALADA DULCE, TOCINETA, MAICITOS, PAPAS A LA FRANCESA Y GASEOSA",
-    price: 18000,
+    price: 20000,
     image: "img/CHUZO DE POLLO 2.jpeg",
     type: "fast-food", // Tipo para determinar bebidas
   },
   {
     name: "CHUZOS DE CERDO",
     description: "AREPA CON QUESO MOZARELLA, ENSALADA DULCE, TOCINETA, MAICITOS, PAPAS A LA FRANCESA Y GASEOSA",
-    price: 18000,
+    price: 20000,
     image: "img/CHUZO DE CERDO 3.jpeg",
     type: "fast-food",
   },
   {
     name: "TILAPIA FRITA",
     description: "ARROZ DE COCO O BLANCO, PATACON,ENSALADA , COMSOME DE BAGRE,  GUARAPO",
-    price: 25000,
+    price: 27000,
     image: "img/TILAPIA.jpeg",
     type: "menu", // Menús llevan jugo
   },
   {
     name: "MONDONGO",
     description: " MONDONGO,COSTILLA DE CERDO AHUMADA, PERNIL DE CERDO,SECO , BANANO , ENSALADA,GUARAPO O CLARO",
-    price: 25000,
+    price: 27000,
     image: "img/MONDONGOO.jpeg",
     type: "menu",
   },
   {
     name: "SANCOCHO TRIFASICO ANTIOQUEÑO",
     description: " CARNE DE SOBREBARRIGA,COSTILLA DE CERDO AHUMADA, POLLO,SECO , AGUCATE, ENSALADA,GUARAPO O CLARO",
-    price: 25000,
+    price: 27000,
     image: "img/TRIFASICO 1.jpeg",
     type: "menu",
   },
@@ -39,7 +39,7 @@ const products = [
     name: "BANDEJA PAISA",
     description:
       " CARNE A LA PLANCHA,CHORIZO, CHICHARRN,FRIJOL,HUEVO,TAJADA DE MADURO,AGUACATE,SECO , ENSALADA,GUARAPO O CLARO",
-    price: 25000,
+    price: 27000,
     image: "img/bandeja paisa.jpg",
     type: "menu",
   },
@@ -47,7 +47,7 @@ const products = [
     name: "ARROZ PAISA (2 PERSONAS)",
     description:
       "#1 PROMOCIÓN: ARROZ PAISA 600 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS",
-    price: 30000,
+    price: 35000,
     image: "img/arroz1.jpeg",
     type: "fast-food",
   },
@@ -55,14 +55,14 @@ const products = [
     name: "ARROZ PAISA (4 PERSONAS)",
     description:
       " PROMOCIÓN: ARROZ PAISA 1200 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS",
-    price: 50000,
+    price: 55000,
     image: "img/arroz1.jpeg",
     type: "fast-food",
   },
   {
     name: "COMBO ALITAS PICANTES,BBQ,A LA NARANJA (1 PERSONA) ",
     description: "8 ALITAS, PAPAS A LA FRANCESA, ENSALADA DULCE , GASEOSA ",
-    price: 18000,
+    price: 20000,
     image: "img/alitas .jpg",
     type: "fast-food",
     hasWingFlavors: true,
@@ -70,7 +70,7 @@ const products = [
   {
     name: "COMBO ALITAS PICANTES,BBQ,A LA NARANJA (2 PERSONAS)",
     description: "16 ALITAS, PAPAS A LA FRANCESA, ENSALADA DULCE , GASEOSA ",
-    price: 32000,
+    price: 35000,
     image: "img/alitas .jpg",
     type: "fast-food",
     hasWingFlavors: true,
@@ -85,7 +85,7 @@ const products = [
   {
     name: "POSTA SUDADA ",
     description: " ARROZ , ENSALADA,FRIJOL O SOPA,TAJADA DE MADURO GUARAPO,GASESOSA,O CLARO, AGUACATE  ",
-    price: 18000,
+    price: 22000,
     image: "img/POSTA4.jpg",
     type: "menu",
   },
@@ -100,7 +100,7 @@ const products = [
     name: "CARNE DE CERDO ESPECIAL ASADO AL BARRIL ",
     description:
       "300 GRAMOS DE CERDO ESPECIAL ASADO AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS",
-    price: 20000,
+    price: 22000,
     image: "img/CARNE ASADA 2.jpeg",
     type: "fast-food",
   },
@@ -108,7 +108,7 @@ const products = [
     name: "CARNE DE RES ASADA AL BARRIL ",
     description:
       "300 GRAMOS DE RES ESPECIAL ASADA AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS",
-    price: 21000,
+    price: 23000,
     image: "img/CARNE ASADA 2.jpeg",
     type: "fast-food",
   },
@@ -124,7 +124,7 @@ const products = [
     name: "CHORIZO ASADO AL BARRIL ",
     description:
       "CHORIZO DEL ORIENTE  ASADO AL BARRIL, SALSAS CHIMICURRI Y HOGADO , AREPA CON MOZARELLA, PAPA COCIDA, 1 GASEOSAS",
-    price: 18000,
+    price: 20000,
     image: "img/chorizo asado1.jpeg",
     type: "fast-food",
   },
@@ -132,7 +132,7 @@ const products = [
     name: "SANCOCHO DE GALLINA CRIOLLA ",
     description:
       "SANCOCHO DE GALLINA CRIOLLA ,SECO ,ENSALADA ,AGUACATE, BANANO, SALSAS CHIMICURRI Y HOGADO , GUARAPO O GASEOSA",
-    price: 25000,
+    price: 27000,
     image: "img/gallina1.gif",
     type: "menu",
   },
@@ -140,7 +140,7 @@ const products = [
     name: "PICADA DEL BARRIL(2 PERSONAS)",
     description:
       "PICADA AL BARRIL 6 PROTEINAS CERDO,CHORIZO,POLLO,CHICHARRON COSTILLA, MORCILLA,PAPA COCIDA SALSAS CHIMICURRI Y HOGADO PATACON,2 GASEOSAS",
-    price: 30000,
+    price: 35000,
     image: "img/picada .jpg",
     type: "fast-food",
     hasPicadaOptions: true,
@@ -149,7 +149,7 @@ const products = [
     name: "PICADA DEL BARRIL FAMILIAR(4 PERSONAS)",
     description:
       "PICADA AL BARRIL 6 PROTEINAS CERDO,CHORIZO,POLLO,CHICHARRON COSTILLA, MORCILLA,PAPA COCIDA SALSAS CHIMICURRI Y HOGADO PATACON,4 GASEOSAS",
-    price: 50000,
+    price: 60000,
     image: "img/picada familiar.jpg",
     type: "fast-food",
     hasPicadaOptions: true,
@@ -157,21 +157,21 @@ const products = [
   {
     name: "PATACÓN CON CARNE DE SOBREBARRIGA DESMECHADA",
     description: "PATACON DE MADURO O VERDE,GUACAMOLE, HOGAO, QUESO MOZARELLA,GASEOSA O GUARAPO",
-    price: 18000,
+    price: 20000,
     image: "img/patacon final.png",
     type: "fast-food",
   },
   {
     name: "PATACÓN MIXTO (CARNE DE SOBREBARRIGA Y POLLO)",
     description: "PATACON DE MADURO O VERDE,GUACAMOLE, HOGAO, QUESO MOZARELLA,GASEOSA O GUARAPO",
-    price: 18000,
+    price: 20000,
     image: "img/patacon final.png",
     type: "fast-food",
   },
   {
     name: "PATACÓN CON TODO (CARNE DE SOBREBARRIGA,POLLO, CERDO,SALCHICHA RANCHERA,TOCINETA",
     description: "PATACON DE MADURO O VERDE,GUACAMOLE, HOGAO, QUESO MOZARELLA, GASEOSA O GUARAPO",
-    price: 20000,
+    price: 22000,
     image: "img/patacon final.png",
     type: "fast-food",
   },
@@ -185,7 +185,7 @@ const products = [
   {
     name: "FIAMBRES",
     description: "CHICHARRÓN, CARNE MOLIDA,CHORIZO, HUEVO COCIDO, PURÉ DE PAPA,TAJADA DE MADURO AGUCATE MÁS GASEOSA",
-    price: 22000,
+    price: 25000,
     image: "img/fiambre 19.jpg",
     type: "fast-food",
   },
@@ -199,28 +199,28 @@ const products = [
   {
     name: "MENU COMPLETICO CON RES",
     description: "ARROZ, FRIJOL, ENSALADA, HUEVO, PAPAS FRITAS, AGUCATE,GUARAPO,SOPA DEL DIA",
-    price: 17000,
+    price: 19000,
     image: "img/menu con res.jpg",
     type: "menu",
   },
   {
     name: "MENU COMPLETICO CON PECHUGA",
     description: "ARROZ, FRIJOL, ENSALADA, HUEVO, PAPAS FRITAS, AGUCATE,GUARAPO,SOPA DEL DIA",
-    price: 16000,
+    price: 18000,
     image: "img/menu con pechuga.jpg",
     type: "menu",
   },
   {
     name: "MENU COMPLETICO CON CERDO",
     description: "ARROZ, FRIJOL, ENSALADA, HUEVO, PAPAS FRITAS, AGUCATE,GUARAPO,SOPA DEL DIA",
-    price: 16000,
+    price: 18000,
     image: "img/menu con cerdo.jpg",
     type: "menu",
   },
   {
     name: "MENU COMPLETICO CON CHICHARRON",
     description: "ARROZ, FRIJOL, ENSALADA, HUEVO, PAPAS FRITAS, AGUCATE,GUARAPO,SOPA DEL DIA",
-    price: 16000,
+    price: 18000,
     image: "img/menu con cerdo.jpg",
     type: "menu",
   },
@@ -234,7 +234,7 @@ const products = [
   {
     name: "DESGRANADOS QUESUDOS",
     description: "*nuestros desgranados únicos, preparados con el toque casero que solo **Claudia* sabe dar 💛",
-    price: 20000,
+    price: 25000,
     image: "img/DESGRANADOS.jpeg",
     type: "menu",
   },
