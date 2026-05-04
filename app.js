@@ -17,14 +17,14 @@ const products = [
   {
     name: "TILAPIA FRITA",
     description: "ARROZ DE COCO O BLANCO, PATACON,ENSALADA , COMSOME DE BAGRE,  GUARAPO",
-    price: 27000,
+    price: 25000,
     image: "img/TILAPIA.jpeg",
     type: "menu", // Menús llevan jugo
   },
   {
     name: "MONDONGO",
     description: " MONDONGO,COSTILLA DE CERDO AHUMADA, PERNIL DE CERDO,SECO , BANANO , ENSALADA,GUARAPO O CLARO",
-    price: 27000,
+    price: 25000,
     image: "img/MONDONGOO.jpeg",
     type: "menu",
   },
@@ -39,7 +39,7 @@ const products = [
     name: "BANDEJA PAISA",
     description:
       " CARNE A LA PLANCHA,CHORIZO, CHICHARRN,FRIJOL,HUEVO,TAJADA DE MADURO,AGUACATE,SECO , ENSALADA,GUARAPO O CLARO",
-    price: 27000,
+    price: 25000,
     image: "img/bandeja paisa.jpg",
     type: "menu",
   },
@@ -47,7 +47,7 @@ const products = [
     name: "ARROZ PAISA (2 PERSONAS)",
     description:
       "#1 PROMOCIÓN: ARROZ PAISA 600 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS",
-    price: 35000,
+    price: 40000,
     image: "img/arroz1.jpeg",
     type: "fast-food",
   },
@@ -55,7 +55,7 @@ const products = [
     name: "ARROZ PAISA (4 PERSONAS)",
     description:
       " PROMOCIÓN: ARROZ PAISA 1200 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS",
-    price: 55000,
+    price: 65000,
     image: "img/arroz1.jpeg",
     type: "fast-food",
   },
@@ -78,14 +78,14 @@ const products = [
   {
     name: "ARROZ PAISA ",
     description: "#2 ARROZ PAISA 300 GARMOS PARA 1 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 1 GASEOSAS",
-    price: 20000,
+    price: 23000,
     image: "img/arroz1.jpeg",
     type: "fast-food",
   },
   {
     name: "POSTA SUDADA ",
     description: " ARROZ , ENSALADA,FRIJOL O SOPA,TAJADA DE MADURO GUARAPO,GASESOSA,O CLARO, AGUACATE  ",
-    price: 22000,
+    price: 19000,
     image: "img/POSTA4.jpg",
     type: "menu",
   },
