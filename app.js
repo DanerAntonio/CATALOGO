@@ -46,7 +46,7 @@ const products = [
   {
     name: "ARROZ PAISA (2 PERSONAS)",
     description:
-      "#1 PROMOCIÓN: ARROZ PAISA 600 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS",
+      "#1 PROMOCIÓN: ARROZ PAISA 600 GARMOS PARA 2 PERSONAS , ALITAS A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS",
     price: 40000,
     image: "img/arroz1.jpeg",
     type: "fast-food",
@@ -54,7 +54,7 @@ const products = [
   {
     name: "ARROZ PAISA (4 PERSONAS)",
     description:
-      " PROMOCIÓN: ARROZ PAISA 1200 GARMOS PARA 2 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS",
+      " PROMOCIÓN: ARROZ PAISA 1200 GARMOS PARA 2 PERSONAS , ALITAS A LA BBQ, PAPAS A LA FRANCESA, 2 GASEOSAS",
     price: 65000,
     image: "img/arroz1.jpeg",
     type: "fast-food",
@@ -77,7 +77,7 @@ const products = [
   },
   {
     name: "ARROZ PAISA ",
-    description: "#2 ARROZ PAISA 300 GARMOS PARA 1 PERSONAS , COSTILLA A LA BBQ, PAPAS A LA FRANCESA, 1 GASEOSAS",
+    description: "#2 ARROZ PAISA 300 GARMOS PARA 1 PERSONAS , ALITAS A LA BBQ, PAPAS A LA FRANCESA, 1 GASEOSAS",
     price: 23000,
     image: "img/arroz1.jpeg",
     type: "fast-food",
