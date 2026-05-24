@@ -312,18 +312,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (selectedProduct.type === "menu") {
       // Menús llevan jugos
       beverageSelect.innerHTML += `
-                <option value="Jugo de Manzana">Jugo de Manzana</option>
-                <option value="Jugo de Naranja">Jugo de Naranja</option>
+                
                 <option value="Jugo de Mora">Jugo de Mora</option>
-                <option value="Jugo de Lulo">Jugo de Lulo</option>
+                <option value="Jugo de Mang">Jugo de Mango</option>
                 <option value="Guarapo">Guarapo</option>
             `
     } else if (selectedProduct.type === "fast-food") {
       // Comidas rápidas llevan gaseosas
       beverageSelect.innerHTML += `
-                <option value="Coca Cola">Coca Cola</option>
-                <option value="Coca Cola Zero">Coca Cola Zero</option>
-                <option value="Sprite">Sprite</option>
+               
                 <option value="Colombiana">Colombiana</option>
                 <option value="Manzana Postobón">Manzana Postobón</option>
                 <option value="Naranja Postobón">Naranja Postobón</option>
