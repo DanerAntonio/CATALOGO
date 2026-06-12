@@ -200,7 +200,7 @@ const products = [
     name: "MENU COMPLETICO CON RES",
     description: "ARROZ, FRIJOL, ENSALADA, HUEVO, PAPAS FRITAS, AGUCATE,GUARAPO,SOPA DEL DIA",
     price: 19000,
-    image: "img/menu con res.jpg",
+    image: "img/res.jpeg",
     type: "menu",
   },
   {
