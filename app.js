@@ -40,7 +40,7 @@ const products = [
     description:
       " CARNE A LA PLANCHA,CHORIZO, CHICHARRN,FRIJOL,HUEVO,TAJADA DE MADURO,AGUACATE,SECO , ENSALADA,GUARAPO O CLARO",
     price: 25000,
-    image: "img/bandeja paisa.jpg",
+    image: "img/bandeja.jpeg",
     type: "menu",
   },
   {
