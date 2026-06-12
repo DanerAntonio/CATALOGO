@@ -214,7 +214,7 @@ const products = [
     name: "MENU COMPLETICO CON CERDO",
     description: "ARROZ, FRIJOL, ENSALADA, HUEVO, PAPAS FRITAS, AGUCATE,GUARAPO,SOPA DEL DIA",
     price: 18000,
-    image: "img/menu con cerdo.jpg",
+    image: "img/cerdo.jpeg",
     type: "menu",
   },
   {
