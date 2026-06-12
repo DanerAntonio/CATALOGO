@@ -221,7 +221,7 @@ const products = [
     name: "MENU COMPLETICO CON CHICHARRON",
     description: "ARROZ, FRIJOL, ENSALADA, HUEVO, PAPAS FRITAS, AGUCATE,GUARAPO,SOPA DEL DIA",
     price: 18000,
-    image: "img/menu con cerdo.jpg",
+    image: "img/chicharron.jpeg",
     type: "menu",
   },
   {
