@@ -207,7 +207,7 @@ const products = [
     name: "MENU COMPLETICO CON PECHUGA",
     description: "ARROZ, FRIJOL, ENSALADA, HUEVO, PAPAS FRITAS, AGUCATE,GUARAPO,SOPA DEL DIA",
     price: 18000,
-    image: "img/menu con pechuga.jpg",
+    image: "img/pechuga.jpeg",
     type: "menu",
   },
   {
